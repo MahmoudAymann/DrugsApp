@@ -227,20 +227,20 @@ public abstract class ApplicationUtil {
     }
 
     public static void requestNewToken() {
-        if (PreferenceHelperManager.getGoogleToken().equals("n/a")) {
-            FirebaseInstanceId.getInstance().getInstanceId().addOnCompleteListener(task -> {
-                if (!task.isSuccessful()) {
-                    Timber.e(task.getException());
-                    return;
-                }
-                if (task.getResult() != null) {
-                    PreferenceHelperManager.saveGoogleToken(task.getResult().getToken());
-                    Timber.e(PreferenceHelperManager.getGoogleToken());
-                }
-            });
-        } else {
-            Timber.e(PreferenceHelperManager.getGoogleToken());
-        }
+//        if (PreferenceHelperManager.getGoogleToken().equals("n/a")) {
+//            FirebaseInstanceId.getInstance().getInstanceId().addOnCompleteListener(task -> {
+//                if (!task.isSuccessful()) {
+//                    Timber.e(task.getException());
+//                    return;
+//                }
+//                if (task.getResult() != null) {
+//                    PreferenceHelperManager.saveGoogleToken(task.getResult().getToken());
+//                    Timber.e(PreferenceHelperManager.getGoogleToken());
+//                }
+//            });
+//        } else {
+//            Timber.e(PreferenceHelperManager.getGoogleToken());
+//        }
     }
 
     public static int getColorInt(@NonNull String stringColor) {

@@ -34,19 +34,6 @@ public class BaseApplication extends Application {
         RxJavaPlugins.setErrorHandler(Timber::e);
 
         DataBindingUtil.setDefaultComponent(new AppDataBindingComponent());
-       initFireBaseToken();
-    }
-    private void initFireBaseToken() {
-        FirebaseApp.initializeApp(this);
-        FirebaseInstanceId.getInstance().getInstanceId() .addOnCompleteListener(task -> {
-            if (!task.isSuccessful()) {
-                Timber.e(task.getException());
-                return;
-            }
-            if (task.getResult()!= null) {
-                PreferenceHelperManager.saveGoogleToken(task.getResult().getToken());
-            }
-        });
     }
 
     @Override

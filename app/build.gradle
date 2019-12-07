@@ -99,10 +99,6 @@ dependencies {
     implementation 'it.xabaras.android:recyclerview-swipedecorator:1.2.2'
     //qr code
     implementation 'com.journeyapps:zxing-android-embedded:3.6.0'
-    //firebase
-    implementation 'com.google.firebase:firebase-analytics:17.2.1'
-    implementation 'com.google.firebase:firebase-messaging:20.0.1'
-    implementation 'com.google.firebase:firebase-auth:19.2.0'
     //bottom navigation bar
     implementation 'com.tbuonomo:morph-bottom-navigation:1.0.1'
     //music circular

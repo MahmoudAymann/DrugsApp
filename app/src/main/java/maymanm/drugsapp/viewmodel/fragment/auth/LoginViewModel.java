@@ -27,38 +27,11 @@ public class LoginViewModel extends BaseViewModel {
 
     @OnClick
     public void onLoginClick() {
-        if  (PreferenceHelperManager.getGoogleToken().equals("n/a")){
-            ApplicationUtil.requestNewToken();
-            return;
-        }
-        goLogin();
+
     }
 
     public LoginRequest getLoginRequest() {
         return loginRequest;
-    }
-
-    private void goLogin() {
-        loginRequest.setFirebase(PreferenceHelperManager.getGoogleToken());
-        accessLoadingBar(View.VISIBLE);
-        new ConnectionHelper(new ConnectionListener() {
-            @Override
-            public void onRequestSuccess(Object response) {
-                LoginResponse loginResponse = (LoginResponse) response;
-                switch (loginResponse.getStatus()) {
-                    case WebServices.SUCCESS:
-                        PreferenceHelperManager.saveUserDetails(loginResponse.getData());
-                        setMessage(loginResponse.getMessage());
-                        setValue(Codes.HOME_SCREEN);
-                        break;
-                    case WebServices.FAILED:
-                            setMessage(loginResponse.getMessage());
-                        setValue(Codes.SHOW_MESSAGE);
-                        break;
-                }
-                accessLoadingBar(View.GONE);
-            }
-        }).requestJsonObject(Request.Method.POST, WebServices.LOGIN, loginRequest, LoginResponse.class);
     }
 
     public void onSkipClick() {
