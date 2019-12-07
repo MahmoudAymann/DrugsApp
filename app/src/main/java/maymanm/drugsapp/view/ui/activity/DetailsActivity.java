@@ -19,18 +19,17 @@ import maymanm.drugsapp.databinding.ActivityDetailsBinding;
 import maymanm.drugsapp.listener.OnSearchViewListener;
 import maymanm.drugsapp.util.ApplicationUtil;
 import maymanm.drugsapp.util.LocalHelper;
+import maymanm.drugsapp.view.ui.fragment.details.FavouriteFragment;
+import maymanm.drugsapp.view.ui.fragment.details.ProductDetailsFragment;
+import maymanm.drugsapp.view.ui.fragment.details.ProductInfoFragment;
+import maymanm.drugsapp.view.ui.fragment.details.SearchFragment;
 import maymanm.drugsapp.viewmodel.activity.DetailsActivityViewModel;
 import timber.log.Timber;
 
 public class DetailsActivity extends ParentActivity implements Observer<Object> {
     private ActivityDetailsBinding binding;
     private DetailsActivityViewModel viewModel;
-    private OnSearchViewListener searchViewListener;
     private int fragment;
-
-    public void searchViewListener(OnSearchViewListener searchViewListener) {
-        this.searchViewListener = searchViewListener;
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +47,21 @@ public class DetailsActivity extends ParentActivity implements Observer<Object> 
 
     private void addFragment(int page) {
         Fragment fragment;
+        if (page == Codes.PRODUCT_DETAILS) {
+            viewModel.obsIsProduct.set(true);
+            fragment = new ProductDetailsFragment();
+        }else if (page == Codes.PRODUCT_INFO) {
+            viewModel.obsIsProduct.set(true);
+            fragment = new ProductInfoFragment();
+        }else if (page == Codes.SEARCH_SCREEN) {
+            viewModel.obsIsProduct.set(false);
+            fragment = new SearchFragment();
+        } else {
+            viewModel.obsIsProduct.set(false);
+            fragment = new FavouriteFragment();
+        }
+        fragment.setArguments(getIntent().getBundleExtra(Params.BUNDLE_PAGE));
+        MovementManager.replaceFragment(this, fragment, "");
     }
 
     private void setViewModel() {
@@ -56,9 +70,10 @@ public class DetailsActivity extends ParentActivity implements Observer<Object> 
         viewModel.getMutableLiveData().observe(this, this);
     }
 
-//    public ProgressBar getProgressBar() {
-//        return binding.appBarDetails.contentDetails.pbDetails;
-//    }
+    public void setFavourite(boolean fav){
+//        viewModel.obsIsFav.set(fav);
+//        viewModel.notifyChange();
+    }
 
     public Toolbar getToolBar() {
         return binding.appBarDetails.toolbar;
@@ -80,8 +95,6 @@ public class DetailsActivity extends ParentActivity implements Observer<Object> 
         int result = (Integer) o;
         if (result == Codes.PRESS_BACK) {
             onBackPressed();
-        }else if (result == Codes.ON_TEXT_CHANGED) {
-            searchViewListener.onQueryTextSubmit(viewModel.getMessage());
         }
     }
 }

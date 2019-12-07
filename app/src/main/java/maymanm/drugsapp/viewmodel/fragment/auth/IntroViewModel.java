@@ -23,23 +23,12 @@ public class IntroViewModel extends BaseViewModel {
 
     @OnClick
     public void onLoginClick() {
-
+        setValue(Codes.LOGIN_SCREEN);
     }
 
-    private void goLogin() {
-
-    }
-
-    public void onSkipClick() {
-        setValue(Codes.HOME_SCREEN);
-    }
 
     public void onSignupClick() {
         setValue(Codes.REGISTER_SCREEN);
-    }
-
-    public void onForgotPassClick(){
-        setValue(Codes.ENTER_PHONE_SCREEN);
     }
 
 }

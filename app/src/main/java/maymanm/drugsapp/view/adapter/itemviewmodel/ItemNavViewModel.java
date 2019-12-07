@@ -4,18 +4,14 @@ import androidx.databinding.Bindable;
 
 import maymanm.drugsapp.base.BaseViewModel;
 import maymanm.drugsapp.model.navdrawer.NavDrawerItem;
+import timber.log.Timber;
 
 public class ItemNavViewModel extends BaseViewModel {
 
-    private NavDrawerItem navDrawerItem;
+    public NavDrawerItem navDrawerItem;
 
     public ItemNavViewModel(NavDrawerItem currentItem) {
         this.navDrawerItem = currentItem;
-    }
-
-    @Bindable
-    public NavDrawerItem getNavDrawerItem() {
-        return navDrawerItem;
     }
 
     public void onItemClick(){

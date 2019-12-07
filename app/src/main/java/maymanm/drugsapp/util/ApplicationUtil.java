@@ -6,6 +6,7 @@ import android.app.TimePickerDialog;
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
@@ -16,6 +17,7 @@ import android.graphics.Point;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.GradientDrawable;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Environment;
 import android.text.format.DateFormat;
@@ -25,6 +27,7 @@ import android.view.Display;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -39,6 +42,7 @@ import androidx.databinding.ObservableField;
 import com.google.android.gms.maps.model.BitmapDescriptor;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.firebase.iid.FirebaseInstanceId;
+import com.google.gson.Gson;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -53,6 +57,7 @@ import java.util.Objects;
 
 import maymanm.drugsapp.R;
 import maymanm.drugsapp.application.BaseApplication;
+import maymanm.drugsapp.view.ui.activity.MainActivity;
 import timber.log.Timber;
 
 public abstract class ApplicationUtil {
@@ -256,6 +261,10 @@ public abstract class ApplicationUtil {
         return BaseApplication.getInstance().getResources().getColor(colorRes);
     }
 
+    public static void openWebIntent(MainActivity context, String url) {
+        context.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(url)));
+    }
+
     public void copyToClipboard(Context context, String text) {
         try {
             ClipboardManager clipboard = (ClipboardManager) context.getSystemService(Context.CLIPBOARD_SERVICE);
@@ -374,5 +383,29 @@ public abstract class ApplicationUtil {
 
     }
 
+    public static <T> T ObjectFromStringJson(String jsonString, Class<T> classObject){
+        Timber.e(jsonString);
+        Gson gson = new Gson();
+        if (jsonString != null) {
+            return gson.fromJson(jsonString, classObject);
+        }else {
+            Timber.e("json string is null");
+            return (T) classObject;
+        }
+    }
+
+
+    public static void hideKeyboard(Activity activity) {
+        InputMethodManager imm = (InputMethodManager) activity.getSystemService(Activity.INPUT_METHOD_SERVICE);
+        //Find the currently focused view, so we can grab the correct window token from it.
+        View view = activity.getCurrentFocus();
+        //If no view currently has focus, create a new one, just so we can grab a window token from it
+        if (view == null) {
+            view = new View(activity);
+        }
+        if (imm != null) {
+            imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
+        }
+    }
 
 }

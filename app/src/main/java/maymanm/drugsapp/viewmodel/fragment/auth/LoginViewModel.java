@@ -17,26 +17,20 @@ import maymanm.drugsapp.util.PreferenceHelperManager;
 
 public class LoginViewModel extends BaseViewModel {
 
-    private LoginRequest loginRequest = new LoginRequest();
-
     public LoginViewModel() {
-        if  (PreferenceHelperManager.getGoogleToken().equals("n/a")){
-            ApplicationUtil.requestNewToken();
-        }
+
     }
+
 
     @OnClick
+    public void onBackClick(){
+        setValue(Codes.PRESS_BACK);
+    }
+    @OnClick
     public void onLoginClick() {
-
-    }
-
-    public LoginRequest getLoginRequest() {
-        return loginRequest;
-    }
-
-    public void onSkipClick() {
         setValue(Codes.HOME_SCREEN);
     }
+
 
     public void onSignupClick() {
         setValue(Codes.REGISTER_SCREEN);

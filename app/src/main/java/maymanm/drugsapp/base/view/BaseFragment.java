@@ -2,6 +2,7 @@ package maymanm.drugsapp.base.view;
 
 import android.Manifest;
 import android.content.Context;
+import android.net.NetworkInfo.DetailedState;
 import android.view.View;
 import android.widget.ProgressBar;
 
@@ -53,13 +54,19 @@ public class BaseFragment extends Fragment {
         }
     }
 
+    public void setFav(boolean fav) {
+        if (mContext instanceof DetailsActivity) {
+            ((DetailsActivity) mContext).setFavourite(fav);
+        }
+    }
+
     private void showAnimation(int resRaw, int show) {
         LottieAnimationView animationView;
-        if (mContext instanceof MainActivity) {
-            animationView = ((MainActivity) mContext).getAnimationView();
-        } else {
-            animationView = ((AuthActivity) mContext).getAnimationView();
-        }
+//        if (mContext instanceof MainActivity) {
+//            animationView = ((MainActivity) mContext).getAnimationView();
+//        } else {
+        animationView = ((AuthActivity) mContext).getAnimationView();
+//        }
         animationView.setAnimation(resRaw);
         animationView.setVisibility(show);
         if (show == View.VISIBLE)
@@ -70,9 +77,7 @@ public class BaseFragment extends Fragment {
 
     protected void showProgressAnimation(int show) {
         LottieAnimationView animationView;
-        if (mContext instanceof MainActivity) {
-            animationView = ((MainActivity) mContext).getAnimationView();
-        } else if (mContext instanceof DetailsActivity) {
+        if (mContext instanceof DetailsActivity) {
             animationView = ((DetailsActivity) mContext).getAnimationView();
         } else if (mContext instanceof AuthActivity) {
             animationView = ((AuthActivity) mContext).getAnimationView();
@@ -104,8 +109,8 @@ public class BaseFragment extends Fragment {
         ((MainActivity) mContext).getViewModel().refreshUserData();
     }
 
-    public void setToolbarTitle(String title){
-         if (mContext instanceof DetailsActivity) {
+    public void setToolbarTitle(String title) {
+        if (mContext instanceof DetailsActivity) {
             ((DetailsActivity) mContext).getToolbarTitle().setText(title);
         }
     }
@@ -140,7 +145,7 @@ public class BaseFragment extends Fragment {
         }
     }
 
-    public void enableSearch(boolean showQrScan){
+    public void enableSearch(boolean showQrScan) {
 
     }
 

@@ -17,6 +17,7 @@ import maymanm.drugsapp.view.ui.fragment.dialogs.ExitDialogFragment;
 import maymanm.drugsapp.view.ui.fragment.dialogs.ImageDialogFragment;
 import maymanm.drugsapp.view.ui.fragment.dialogs.LogoutDialogFragment;
 import maymanm.drugsapp.view.ui.fragment.dialogs.PermissionDialogFragment;
+import maymanm.drugsapp.view.ui.fragment.dialogs.UpdateDialogFragment;
 import timber.log.Timber;
 
 public class DialogActivity extends ParentActivity {
@@ -43,7 +44,9 @@ public class DialogActivity extends ParentActivity {
             fragment = new ExitDialogFragment();
         } else if (page == Codes.LOGOUT_SCREEN) {
             fragment = new LogoutDialogFragment();
-        }else{
+        } else if (page == Codes.UPDATE_DIALOG) {
+             fragment = new UpdateDialogFragment();
+         }else{
             fragment = new ImageDialogFragment();
         }
 

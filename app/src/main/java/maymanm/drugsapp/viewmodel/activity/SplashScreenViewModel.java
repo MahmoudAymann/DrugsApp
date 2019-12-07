@@ -2,6 +2,9 @@ package maymanm.drugsapp.viewmodel.activity;
 
 import maymanm.drugsapp.base.BaseViewModel;
 import maymanm.drugsapp.base.constantsutils.Codes;
+import maymanm.drugsapp.base.constantsutils.Params;
+import maymanm.drugsapp.model.drugs.DrugsResponse;
+import maymanm.drugsapp.util.ApplicationUtil;
 import maymanm.drugsapp.util.PreferenceHelperManager;
 import maymanm.drugsapp.util.RxUtils;
 import io.reactivex.disposables.Disposable;
@@ -12,6 +15,8 @@ public class SplashScreenViewModel extends BaseViewModel {
 
     public SplashScreenViewModel() {
         startApp();
+        PreferenceHelperManager.saveDrugs(ApplicationUtil.ObjectFromStringJson(Params.DRUGS_JSON_STRING, DrugsResponse.class));
+
     }
 
     private void startApp() {
@@ -22,7 +27,7 @@ public class SplashScreenViewModel extends BaseViewModel {
         if (PreferenceHelperManager.isLogged()) {
             setValue(Codes.HOME_SCREEN);
         } else {
-            setValue(Codes.LOGIN_SCREEN);
+            setValue(Codes.INTRO_SCREEN);
         }
         disposable.dispose();
     }

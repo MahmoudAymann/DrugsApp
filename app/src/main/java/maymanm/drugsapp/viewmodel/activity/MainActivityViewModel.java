@@ -25,14 +25,14 @@ public class MainActivityViewModel extends BaseViewModel {
 
 
     public void refreshUserData(){
-        if(PreferenceHelperManager.getUserLoginDetails().getFirstName() != null){
-            navDrawerContainer.getNavHeaderItem().setName(PreferenceHelperManager.getUserLoginDetails().getFirstName() + " " +PreferenceHelperManager.getUserLoginDetails().getLastName());
-        }else
-            navDrawerContainer.getNavHeaderItem().setName(getString(R.string.new_user));
-        navDrawerContainer.getNavHeaderItem().setPhone(PreferenceHelperManager.getUserLoginDetails().getPhoneNumber());
-        navDrawerContainer.getNavHeaderItem().setImage(PreferenceHelperManager.getUserLoginDetails().getUserImage());
-        navDrawerContainer.getNavHeaderItem().setPoints(PreferenceHelperManager.getUserLoginDetails().getPoints());
-        notifyChange();
+//        if(PreferenceHelperManager.getDrugsResponse().getFirstName() != null){
+//            navDrawerContainer.getNavHeaderItem().setName(PreferenceHelperManager.getDrugsResponse().getFirstName() + " " +PreferenceHelperManager.getDrugsResponse().getLastName());
+//        }else
+//            navDrawerContainer.getNavHeaderItem().setName(getString(R.string.new_user));
+//        navDrawerContainer.getNavHeaderItem().setPhone(PreferenceHelperManager.getDrugsResponse().getPhoneNumber());
+//        navDrawerContainer.getNavHeaderItem().setImage(PreferenceHelperManager.getDrugsResponse().getUserImage());
+//        navDrawerContainer.getNavHeaderItem().setPoints(PreferenceHelperManager.getDrugsResponse().getPoints());
+//        notifyChange();
     }
 
     private void setItems() {
@@ -53,9 +53,5 @@ public class MainActivityViewModel extends BaseViewModel {
         setValue(Codes.PROFILE_SCREEN);
     }
 
-    @OnClick
-    public void onSearchClick(){
-        setValue(Codes.TOOLBAR_SEARCH_CLICK);
-    }
 
 }

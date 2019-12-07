@@ -20,6 +20,7 @@ import maymanm.drugsapp.view.adapter.viewholder.HomeViewHolder;
 public class HomeAdapter extends RecyclerView.Adapter<HomeViewHolder> {
     private List<HomeItem> dataList;
     private MutableLiveData<HomeItem> mutableLiveData;
+
     public HomeAdapter() {
         mutableLiveData = new MutableLiveData<>();
         dataList = new ArrayList<>();

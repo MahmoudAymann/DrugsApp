@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <TextView
+        android:id="@+id/text_message_incoming"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/chat_right_background"
+        android:lineSpacingExtra="2dp"
+        android:paddingStart="20dp"
+        android:paddingTop="4dp"
+        android:paddingEnd="10dp"
+        android:paddingBottom="10dp"
+        tools:text="Hi, How are you?"
+        android:textColor="@color/white"
+        android:layout_marginTop="@dimen/dp8h"
+        android:layout_marginBottom="@dimen/dp8h"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_max="wrap"
+        app:layout_constraintWidth_percent="0.8" />
+
+    <data>
+        <variable
+            name="viewModel"
+            type="maymanm.drugsapp.view.adapter.itemviewmodel.ItemChatViewModel" />
+    </data>
+
+</layout>

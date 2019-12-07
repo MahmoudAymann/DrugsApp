@@ -29,7 +29,6 @@
             android:layout_height="@dimen/dp100h"
             android:scaleType="centerInside"
             tools:src="@drawable/ic_verify"
-            app:setAlertDialogIcon="@{viewModel.obsIcon}"
             app:layout_constraintVertical_bias="0.3"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

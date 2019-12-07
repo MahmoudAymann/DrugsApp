@@ -54,18 +54,6 @@ public class OtherViewsBinding {
             imageView.setImageDrawable((BitmapDrawable) path);
     }
 
-    @BindingAdapter("app:setAlertDialogIcon")
-    public void bindImage(ImageView imageView, ObservableInt obsInt) {
-        switch (obsInt.get()) {
-            case Codes.COUPON_IMAGE:
-                imageView.setImageResource(R.drawable.copoun_image);
-                break;
-            default:
-                imageView.setImageResource(R.drawable.ic_verify);
-                break;
-        }
-    }
-
     @BindingAdapter("app:animatePinView")
     public void bindPinView(PinView pinView, boolean animate) {
         pinView.setAnimationEnable(animate);
@@ -118,6 +106,10 @@ public class OtherViewsBinding {
 
     @BindingAdapter({"myIcon"})
     public void bindIconMaterialBtnView(MaterialButton button, int resId) {
+        if (resId == 0) {
+            button.setIcon(null);
+            return;
+        }
         button.setIcon(ContextCompat.getDrawable(BaseApplication.getInstance().getApplicationContext(), resId));
     }
 
@@ -184,8 +176,6 @@ public class OtherViewsBinding {
         } else
             imageView.animate().setDuration(300).rotation(180f).start();
     }
-
-
 
 
     @BindingAdapter("app:removeImageOnEndIconClickListener")

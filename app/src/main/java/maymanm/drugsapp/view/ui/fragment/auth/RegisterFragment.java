@@ -49,25 +49,6 @@ public class RegisterFragment extends BaseFragment implements Observer<Object> {
         viewModel.getMutableLiveData().observe(getViewLifecycleOwner(), this);
     }
 
-    @Override
-    public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if (requestCode == Codes.LOCATION_SCREEN_REQUEST_CODE) {
-            setData(data.getExtras());
-        } else {
-            super.onActivityResult(requestCode, resultCode, data);
-        }
-    }
-
-    private void setData(Bundle data) {
-        if (data != null) {
-            double lat = data.getDouble(Params.LATITUDE, 0);
-            double lng = data.getDouble(Params.LONGITUDE, 0);
-            String address = data.getString(Params.ADDRESS);
-            viewModel.registerRequest.setLat(lat);
-            viewModel.registerRequest.setLng(lng);
-            viewModel.obsLocation.set(address);
-        }
-    }
 
     @Override
     public void onChanged(Object o) {
@@ -78,11 +59,6 @@ public class RegisterFragment extends BaseFragment implements Observer<Object> {
             showMessage(viewModel.getMessage());
         }else if (result == Codes.PRESS_BACK){
             requireActivity().finish();
-        }else if (result == Codes.LOCATION_SCREEN){
-            MovementManager.startActivityForResult(requireActivity(), AuthActivity.class,
-                    Codes.LOCATION_SCREEN_REQUEST_CODE, Codes.MAP_SCREEN);
-        }else if (result == Codes.TERMS_SCREEN){
-            MovementManager.startDetailsActivity(getContext(), Codes.TERMS_SCREEN);
         }else if (result == Codes.HOME_SCREEN){
             MovementManager.startMainActivity(getContext(), Codes.HOME_SCREEN);
             requireActivity().finishAffinity();

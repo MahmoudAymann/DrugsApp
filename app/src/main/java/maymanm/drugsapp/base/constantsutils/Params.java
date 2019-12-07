@@ -1,6 +1,90 @@
 package maymanm.drugsapp.base.constantsutils;
 
 public class Params {
+
+    public static final String DRUGS_JSON_STRING = "{\n" +
+            "    \"status\": 200,\n" +
+            "    \"message\": \"عرض البيانات بنجاح\",\n" +
+            "    \"data\": {\n" +
+            "        \"drugs\": [\n" +
+            "            {\n" +
+            "                \"id\":1,\n" +
+            "                \"name\": \"ketfan\",\n" +
+            "                \"rate\":\"3.5\",\n" +
+            "                \"image\":\"https://img.youm7.com/large/201803071013181318.jpg\",\n" +
+            "                \"composition\":\"details here\",\n" +
+            "                \"indication\":\"details here\",\n" +
+            "                \"contraindications\":\"details here\",\n" +
+            "                \"precautions\":\"details here\",\n" +
+            "                \"interactions\":\"details here\",\n" +
+            "                \"side_effects\":\"detials here\",\n" +
+            "                \"overdose\":\"details here\",\n" +
+            "                \"pharmacology\":\"details here\",\n" +
+            "                \"packaging\":\"details here\",\n" +
+            "                \"pregnancy\":\"details here\",\n" +
+            "                \"tablets\":[\n" +
+            "                  {\n" +
+            "                  \"id\":1,\n" +
+            "                  \"name\":\"20\",\n" +
+            "                  \"description\":\"50 mg\",\n" +
+            "                  \"cost\":\"10 LE\"\n" +
+            "                  }\n" +
+            "                ]\n" +
+            "                \n" +
+            "            },\n" +
+            "            {\n" +
+            "                \"id\":2,\n" +
+            "                \"name\": \"apimol\",\n" +
+            "                \"rate\":\"4\",\n" +
+            "                \"image\":\"https://nairoukhclick.com/Admin_Site/Articles/Images/16/0/d8e1b180-301a-4870-ad2a-0bf922c18478123.png\",\n" +
+            "                \"composition\":\"details here\",\n" +
+            "                \"indication\":\"details here\",\n" +
+            "                \"contraindications\":\"details here\",\n" +
+            "                \"precautions\":\"details here\",\n" +
+            "                \"interactions\":\"details here\",\n" +
+            "                \"side_effects\":\"detials here\",\n" +
+            "                \"overdose\":\"details here\",\n" +
+            "                \"pharmacology\":\"details here\",\n" +
+            "                \"packaging\":\"details here\",\n" +
+            "                \"pregnancy\":\"details here\",\n" +
+            "                \"tablets\":[\n" +
+            "                  {\n" +
+            "                  \"id\":1,\n" +
+            "                  \"name\":\"20\",\n" +
+            "                  \"description\":\"50 mg\",\n" +
+            "                  \"cost\":\"10 LE\"\n" +
+            "                  },\n" +
+            "                  {\n" +
+            "                  \"id\":2,\n" +
+            "                  \"name\":\"50\",\n" +
+            "                  \"description\":\"100 mg\",\n" +
+            "                  \"cost\":\"60 LE\"\n" +
+            "                  }\n" +
+            "                ]\n" +
+            "            }\n" +
+            "        ]\n" +
+            "    }\n" +
+            "}";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     //SharedPreferenceParams
     public static final String PREF_FILE_NAME = "Saredar_cash";
 
@@ -11,9 +95,8 @@ public class Params {
     public static final String INTENT_SETTINGS="settings";
     public static final String INTENT_PAGE="page";
 
-    //data in bundle
-    public static final String SERVICE_ID = "service_id";
 
+    public static final String SERVICE_ID = "service_id";
     public static final String TOOLBAR_TITLE = "toolbar_title";
     public static final String SHOP_ID = "shop_id";
     public static final String PRODUCT_ID = "product_id";
@@ -73,4 +156,9 @@ public class Params {
     public static final String PREF_ADDRESS_ID = "PREF_ADDRESS_ID";
     public static final String CARD_ID = "CARD_ID";
     public static final String PREF_CODE = "PREF_CODE";
+    public static final String DESCRIPTION = "DESCRIPTION";
+
+
+    public static final String PREF_DRUGS = "PREF_DRUGS";
+    public static final String PREF_CHAT = "PREF_CHAT";
 }

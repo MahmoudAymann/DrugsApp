@@ -25,9 +25,9 @@
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
             tools:text="@string/app_name"
-            myIcon="@{viewModel.navDrawerItem.iconRes}"
             app:iconTint="@color/colorAccent"
             android:text="@{viewModel.navDrawerItem.title}"
+            android:onClick="@{()->viewModel.onItemClick()}"
             />
     </RelativeLayout>
 

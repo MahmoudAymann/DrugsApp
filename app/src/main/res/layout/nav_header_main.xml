@@ -18,6 +18,7 @@
         android:paddingTop="@dimen/activity_vertical_margin"
         android:paddingRight="@dimen/activity_horizontal_margin"
         android:paddingBottom="@dimen/dp8h"
+        android:layoutDirection="ltr"
         tools:background="@color/colorAccent">
 
         <de.hdodenhof.circleimageview.CircleImageView
@@ -28,8 +29,7 @@
             android:src="@color/white"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:profileImageWhite="@{headerLayout.navDrawerContainer.navHeaderItem.image}" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="wrap_content"

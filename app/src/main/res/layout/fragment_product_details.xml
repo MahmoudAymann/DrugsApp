@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:background="@color/background_color"
+            android:paddingBottom="@dimen/dp16h">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cl_head_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/image"
+                    android:layout_width="@dimen/dp80w"
+                    android:layout_height="@dimen/dp80h"
+                    android:src="@color/white"
+                    imageUrl="@{viewModel.item.image}"
+                    app:civ_border_color="@color/colorAccent_white"
+                    app:civ_border_width="1dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dp8w"
+                    android:layout_marginTop="@dimen/dp8h"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+                    android:textStyle="bold"
+                    android:text="@{viewModel.item.name}"
+                    app:layout_constraintStart_toEndOf="@+id/image"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="@string/name" />
+
+                <me.zhanghai.android.materialratingbar.MaterialRatingBar
+                    android:id="@+id/rateBar"
+                    style="@style/MyRatingBarStyle.Indicator.Small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dp8w"
+                    android:layout_marginTop="@dimen/dp8h"
+                    android:numStars="5"
+                    android:rating="@{viewModel.item.rate}"
+                    app:layout_constraintStart_toEndOf="@id/image"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_name"
+                    app:mrb_progressBackgroundTint="@color/g_yellow"
+                    app:mrb_progressTint="@color/g_yellow"
+                    app:mrb_secondaryProgressTint="@color/g_yellow"
+                    tools:rating="3.5" />
+
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_alternative"
+                    style="@style/ButtonFilled"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/alternative"
+                    app:backgroundTint="#000E2B"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cv_tablets"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="16dp"
+                android:layout_marginEnd="@dimen/dp24w"
+                android:layout_marginStart="@dimen/dp24w"
+                android:layout_marginTop="@dimen/dp16h"
+                app:cardBackgroundColor="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/cl_head_info">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.google.android.material.floatingactionbutton.FloatingActionButton
+                        style="@style/MyFabNoBackgroundStyle"
+                        android:id="@+id/btn_arrow_left"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_left_arrow"
+                        app:fabSize="mini"
+                        android:clickable="false"
+                        android:focusable="false"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        />
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recyclerView2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="8dp"
+                        app:adapter="@{viewModel.tabletsAdapter}"
+                        tools:listitem="@layout/item_tablet_view"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/btn_arrow_right"
+                        app:layout_constraintStart_toEndOf="@id/btn_arrow_left"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <com.google.android.material.floatingactionbutton.FloatingActionButton
+                        android:id="@+id/btn_arrow_right"
+                        style="@style/MyFabNoBackgroundStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:clickable="false"
+                        android:focusable="false"
+                        android:src="@drawable/ic_right_arrow_slide"
+                        app:fabSize="mini"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_composition"
+                style="@style/SubmitButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/composition"
+                android:onClick="@{()->viewModel.clickButton(1)}"
+                android:layout_marginTop="@dimen/dp16h"
+                android:layout_marginEnd="@dimen/dp40w"
+                android:layout_marginStart="@dimen/dp40w"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/cv_tablets"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_indication"
+                style="@style/SubmitButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/indication"
+                android:onClick="@{()->viewModel.clickButton(2)}"
+                android:layout_marginTop="@dimen/dp16h"
+                android:layout_marginEnd="@dimen/dp40w"
+                android:layout_marginStart="@dimen/dp40w"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/btn_composition"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_contra"
+                style="@style/SubmitButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/contraindications"
+                android:onClick="@{()->viewModel.clickButton(3)}"
+                android:layout_marginTop="@dimen/dp16h"
+                android:layout_marginEnd="@dimen/dp40w"
+                android:layout_marginStart="@dimen/dp40w"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/btn_indication"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_precautions"
+                style="@style/SubmitButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/precautions"
+                android:onClick="@{()->viewModel.clickButton(4)}"
+                android:layout_marginTop="@dimen/dp16h"
+                android:layout_marginEnd="@dimen/dp40w"
+                android:layout_marginStart="@dimen/dp40w"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/btn_contra"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_pregnancy"
+                style="@style/SubmitButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/pregnancy"
+                android:onClick="@{()->viewModel.clickButton(5)}"
+                android:layout_marginTop="@dimen/dp16h"
+                android:layout_marginEnd="@dimen/dp40w"
+                android:layout_marginStart="@dimen/dp40w"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/btn_precautions"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_interactions"
+                style="@style/SubmitButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/interactions"
+                android:onClick="@{()->viewModel.clickButton(6)}"
+                android:layout_marginTop="@dimen/dp16h"
+                android:layout_marginEnd="@dimen/dp40w"
+                android:layout_marginStart="@dimen/dp40w"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/btn_pregnancy"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_side_effects"
+                style="@style/SubmitButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/side_effects"
+                android:onClick="@{()->viewModel.clickButton(7)}"
+                android:layout_marginTop="@dimen/dp16h"
+                android:layout_marginEnd="@dimen/dp40w"
+                android:layout_marginStart="@dimen/dp40w"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/btn_interactions"/>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+    <data>
+        <variable
+            name="viewModel"
+            type="maymanm.drugsapp.viewmodel.fragment.main.ProductDetailViewModel" />
+    </data>
+</layout>

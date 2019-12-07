@@ -14,49 +14,28 @@
         android:layout_height="match_parent"
         android:animateLayoutChanges="true"
         tools:context=".view.ui.activity.MainActivity"
-        tools:showIn="@layout/app_bar_main">
+        tools:showIn="@layout/app_bar_main"
+        android:layoutDirection="ltr">
 
-        <FrameLayout
-            android:id="@+id/fl_home_container"
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabLayout"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_centerInParent="true"
-
-            app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-
-        <com.tbuonomo.morphbottomnavigation.MorphBottomNavigationView
-            android:id="@+id/bottomNavigationView"
-            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layoutDirection="ltr"
-            app:labelVisibilityMode="unlabeled"
-            app:itemIconTint="@color/white"
-            app:menu="@menu/menu_bottom_navigation"
-            app:backgroundTint="@color/colorAccent"
-            app:morphCornerRadius="8dp"
-            app:morphItemRadius="100dp"
-            app:morphVerticalOffset="16dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            />
-
-        <com.airbnb.lottie.LottieAnimationView
-            android:id="@+id/anim_view"
-            android:layout_width="@dimen/dp80w"
-            android:layout_height="@dimen/dp80h"
-            android:layout_centerInParent="true"
-            android:visibility="gone"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:lottie_autoPlay="true"
-            app:lottie_loop="true" />
+            app:tabIndicatorColor="@color/colorAccent"
+            app:tabSelectedTextColor="@color/black"
+            app:tabTextColor="@color/disabled_text_color" />
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/viewPager2"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tabLayout" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

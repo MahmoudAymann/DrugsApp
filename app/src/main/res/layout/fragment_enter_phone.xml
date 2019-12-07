@@ -4,11 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".view.ui.fragment.auth.VerifyCodeFragment">
 
-    <data>
-
-        <import type="maymanm.drugsapp.view.ui.clickhandler.SpinnerClickHandler" />
-
-    </data>
 
     <ScrollView
         android:layout_width="match_parent"

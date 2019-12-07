@@ -16,7 +16,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fitsSystemWindows="true"
-        tools:openDrawer="start">
+        tools:openDrawer="start"
+        android:layoutDirection="rtl">
 
 
         <!--appbar main-->
@@ -37,6 +38,7 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:background="@color/colorAccent"
                 >
 
                 <include
@@ -90,6 +92,7 @@
                         android:layout_height="match_parent"
                         android:clickable="false"
                         android:focusable="false"
+                        android:padding="16dp"
                         android:src="@drawable/ic_facebook"
                         tools:ignore="ContentDescription" />
                 </LinearLayout>

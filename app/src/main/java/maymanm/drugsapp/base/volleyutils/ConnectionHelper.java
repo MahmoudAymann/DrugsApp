@@ -146,9 +146,9 @@ public class ConnectionHelper {
     public HashMap<String, String> getCustomHeaders() {
         HashMap<String, String> headers = new HashMap<>();
         //header
-        String token = PreferenceHelperManager.getUserLoginDetails().getJwtToken();
-        Timber.tag("token").e(token);
-        headers.put("jwt", token);
+//        String token = PreferenceHelperManager.getDrugsResponse().getJwtToken();
+//        Timber.tag("token").e(token);
+//        headers.put("jwt", token);
         headers.put("lang", PreferenceHelperManager.getLanguage());
         return headers;
     }

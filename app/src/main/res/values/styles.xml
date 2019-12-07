@@ -33,7 +33,9 @@
     <style name="TextInputLayoutNoBorder" parent="Widget.MaterialComponents.TextInputLayout.FilledBox">
         <item name="errorIconDrawable">@null</item>
         <item name="errorIconTint">@null</item>
-        <item name="boxBackgroundColor">@color/background_color</item>
+        <item name="boxBackgroundColor">@color/transparent</item>
+        <item name="android:textColorHint">@color/text_input_label_color</item>
+        <item name="hintTextColor">@color/text_input_label_color</item>
         <item name="boxCornerRadiusTopStart">8dp</item>
         <item name="boxCornerRadiusBottomEnd">8dp</item>
         <item name="boxCornerRadiusBottomStart">8dp</item>

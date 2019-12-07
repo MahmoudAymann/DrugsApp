@@ -121,6 +121,18 @@ public class Codes {
     public static final int COUPON_IMAGE = 30105;
     public static final int CHANGE_LEVEL_SCREEN = 30106;
     public static final int EXAM_SCREEN = 30107;
+    public static final int ADD_NEW_DRUG = 30108;
+    public static final int DOWNLOAD_UPDATES = 30109;
+    public static final int COMPOSITION = 30110;
+    public static final int INDICATION = 30111;
+    public static final int CONTRAINDICATION = 30112;
+    public static final int PRECAUTIONS = 30113;
+    public static final int PREGNANCY = 30114;
+    public static final int INTERACTIONS = 30115;
+    public static final int SIDE_EFFECTS = 30116;
+    public static final int PRODUCT_INFO = 30117;
+    public static final int UPDATE_DIALOG = 30118;
+
 
     public static int TYPE_VIDEO_REQUEST_CODE = 11;
     public static int TYPE_PDF_REQUEST_CODE = 12;

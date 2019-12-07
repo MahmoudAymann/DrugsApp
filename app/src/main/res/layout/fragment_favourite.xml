@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <maymanm.drugsapp.base.customviews.MySwipeRefreshLayout
+            android:id="@+id/swipe_refresh"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            app:onRefreshListener="@{() -> viewModel.onRefresh()}"
+            app:refreshing="@{viewModel.isLoading}">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingBottom="@dimen/dp8h"
+                app:layoutManager="LinearLayoutManager"
+                tools:listitem="@layout/item_favourite_view"
+                />
+        </maymanm.drugsapp.base.customviews.MySwipeRefreshLayout>
+
+    </RelativeLayout>
+
+    <data>
+        <variable
+            name="viewModel"
+            type="maymanm.drugsapp.viewmodel.fragment.main.FavouriteViewModel" />
+    </data>
+</layout>

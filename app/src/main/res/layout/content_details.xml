@@ -22,7 +22,7 @@
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
-            tools:background="@color/black_trans"/>
+            android:background="@color/background_color"/>
 
         <ProgressBar
             android:id="@+id/pb_details"

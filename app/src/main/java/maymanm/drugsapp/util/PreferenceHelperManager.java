@@ -7,10 +7,12 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
 import java.lang.reflect.Type;
+import java.util.ArrayList;
 import java.util.List;
 
 import maymanm.drugsapp.application.BaseApplication;
 import maymanm.drugsapp.base.constantsutils.Params;
+import maymanm.drugsapp.model.drugs.DrugsResponse;
 import maymanm.drugsapp.model.login.response.AccountData;
 import timber.log.Timber;
 
@@ -48,7 +50,7 @@ public class PreferenceHelperManager {
     }
 
     public static boolean isLogged() {
-        return getUserLoginDetails().getJwtToken() != null;
+        return false;
     }
 
     public static void setFirstTime(boolean isFirstTime){
@@ -62,19 +64,19 @@ public class PreferenceHelperManager {
     }
 
 
-    public static void saveUserDetails(AccountData userModel) {
+    public static void saveDrugs(DrugsResponse userModel) {
         SharedPreferences.Editor prefsEditor = getSharedPreferenceInstance().edit();
         Gson gson = new Gson();
         String json = gson.toJson(userModel);
-        prefsEditor.putString(Params.PREF_ACCOUNT_DETAILS, json);
+        prefsEditor.putString(Params.PREF_DRUGS, json);
         prefsEditor.apply();
     }
 
-    public static AccountData getUserLoginDetails() {
+    public static DrugsResponse getDrugsResponse() {
         Gson gson = new Gson();
-        String json = getSharedPreferenceInstance().getString(Params.PREF_ACCOUNT_DETAILS, "");
-        if (json.equals("")) return new AccountData();
-        return gson.fromJson(json, AccountData.class);
+        String json = getSharedPreferenceInstance().getString(Params.PREF_DRUGS, "");
+        if (json.equals("")) return new DrugsResponse();
+        return gson.fromJson(json, DrugsResponse.class);
     }
 
     public static void clear(String key) {
@@ -188,14 +190,38 @@ public class PreferenceHelperManager {
         return getSharedPreferenceInstance().getString(Params.PREF_PHONE, "n/a");
     }
 
-    public static void setCode(String code) {
+    public static void setDrugId(int code) {
         SharedPreferences.Editor editor = getSharedPreferenceInstance().edit();
-        editor.putString(Params.PREF_CODE, code);
+        editor.putString(Params.PREF_CODE, String.valueOf(code));
         editor.apply();
     }
 
-    public static String getCode() {
-        return getSharedPreferenceInstance().getString(Params.PREF_CODE, "n/a");
+    public static String getDrugId() {
+        return getSharedPreferenceInstance().getString(Params.PREF_CODE, "0");
     }
+
+
+    public static void saveIds(List<String> items) {
+        SharedPreferences.Editor prefsEditor = getSharedPreferenceInstance().edit();
+        Gson gson = new Gson();
+        String json = gson.toJson(items);
+        prefsEditor.putString(Params.PREF_CART_ITEMS, json);
+        prefsEditor.apply();
+    }
+
+    public static List<String> getIds() {
+        Gson gson = new Gson();
+        List<String> companyList;
+        String string = getSharedPreferenceInstance().getString(Params.PREF_CART_ITEMS, "n/a");
+        if(!string.equals("n/a")) {
+            Type type = new TypeToken<List<String>>() {
+            }.getType();
+            companyList = gson.fromJson(string, type);
+        }else {
+            companyList = new ArrayList<>();
+        }
+        return companyList;
+    }
+
 
 }

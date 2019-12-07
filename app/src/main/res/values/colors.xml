@@ -48,7 +48,7 @@
     <color name="transparent_white_2">#77ffffff</color>
     <color name="off_white">#eeeeee</color>
     <color name="shop_color_accent">#0A364F</color>
-    <color name="tool_bar_title_color">#000</color>
+    <color name="tool_bar_title_color">@color/colorAccent</color>
     <color name="order_input_icon_color">#5C6D75</color>
     <color name="gray_dim">#EBEBEB</color>
     <color name="white_gray">#939293</color>

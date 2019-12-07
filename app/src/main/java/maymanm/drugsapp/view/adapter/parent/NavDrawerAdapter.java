@@ -85,6 +85,7 @@ public class NavDrawerAdapter extends RecyclerView.Adapter<NavDrawerViewHolder> 
         holder.setViewModel(viewModel);
         viewModel.getMutableLiveData().observeForever(o -> {
             mutableLiveData.setValue(getCurrentItem(position));
+            Timber.e("sssss");
         });
     }
 
