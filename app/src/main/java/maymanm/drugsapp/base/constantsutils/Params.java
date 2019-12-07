@@ -65,7 +65,8 @@ public class Params {
             "            }\n" +
             "        ]\n" +
             "    }\n" +
-            "}";
+            "}"
+            ;
 
 
 
