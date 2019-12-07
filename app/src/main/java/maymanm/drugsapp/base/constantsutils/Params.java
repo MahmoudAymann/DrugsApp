@@ -1,6 +1,7 @@
 package maymanm.drugsapp.base.constantsutils;
 
 public class Params {
+//    public static final String DRUGS_JSON_STRING = ""
 
     public static final String DRUGS_JSON_STRING = "{\n" +
             "    \"status\": 200,\n" +
