@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+
+    <data>
+        <variable
+            name="viewModel"
+            type="maymanm.drugsapp.viewmodel.activity.MainActivityViewModel" />
+    </data>
+
+    <androidx.drawerlayout.widget.DrawerLayout
+        android:id="@+id/drawer_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        tools:openDrawer="start">
+
+
+        <!--appbar main-->
+        <include
+            android:id="@+id/app_bar_main"
+            layout="@layout/app_bar_main"
+            bind:appBarMain="@{viewModel}" />
+
+
+        <!--navigation view-->
+        <com.google.android.material.navigation.NavigationView
+            android:id="@+id/nav_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:fitsSystemWindows="true">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                >
+
+                <include
+                    android:id="@+id/header_layout"
+                    layout="@layout/nav_header_main"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/nav_header_height"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    bind:headerLayout="@{viewModel}"
+                    bind:layout_constraintTop_toTopOf="parent"
+                    bind:layout_constraintEnd_toEndOf="parent"
+                    bind:layout_constraintStart_toStartOf="parent"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_above="@id/ll_grand"
+                    android:layout_below="@id/header_layout"
+                    android:layout_centerHorizontal="true"
+                    android:paddingStart="@dimen/nav_drawer_item_padding_start"
+                    android:paddingEnd="@dimen/nav_drawer_item_padding_end"
+                    app:adapter="@{viewModel.navDrawerAdapter}"
+                    tools:listitem="@layout/item_nav_drawer_view"
+                    bind:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    bind:layout_constraintBottom_toTopOf="@+id/ll_grand"
+                    bind:layout_constraintEnd_toEndOf="parent"
+                    bind:layout_constraintStart_toStartOf="parent"
+                    bind:layout_constraintTop_toBottomOf="@id/header_layout" />
+
+                <LinearLayout
+                    android:id="@+id/ll_grand"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:gravity="end"
+                    android:onClick="@{()->viewModel.onGrandBtnClick()}"
+                    android:visibility="visible"
+                    bind:layout_constraintBottom_toBottomOf="parent"
+                    bind:layout_constraintEnd_toEndOf="parent"
+                    bind:layout_constraintStart_toStartOf="parent">
+
+                    <ImageView
+                        android:id="@+id/img_grand_watermark"
+                        style="@style/Widget.MaterialComponents.Button.TextButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:clickable="false"
+                        android:focusable="false"
+                        android:src="@drawable/ic_facebook"
+                        tools:ignore="ContentDescription" />
+                </LinearLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.navigation.NavigationView>
+
+    </androidx.drawerlayout.widget.DrawerLayout>
+
+</layout>

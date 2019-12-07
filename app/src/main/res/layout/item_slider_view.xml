@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:cardCornerRadius="16dp"
+        android:layout_margin="8dp"
+        android:onClick="@{()->viewModel.onItemClick()}">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:src="@drawable/grand_logo"
+            android:scaleType="fitXY"
+            android:tint="@color/dim_black"
+            imageUrl="@{viewModel.sliderItem.sliderImage}"/>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <data>
+        <variable
+            name="viewModel"
+            type="maymanm.drugsapp.view.adapter.itemviewmodel.ItemSliderViewModel" />
+    </data>
+
+</layout>

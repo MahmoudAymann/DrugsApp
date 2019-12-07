@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="maymanm.drugsapp.view.adapter.itemviewmodel.ItemNavViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/rl_root"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/nav_drawer_item_height"
+        android:clickable="true"
+        android:focusable="true"
+        android:onClick="@{()->viewModel.onItemClick()}">
+
+        <com.google.android.material.button.MaterialButton
+            style="@style/NavDrawerItemStyle"
+            android:id="@+id/item"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            tools:text="@string/app_name"
+            myIcon="@{viewModel.navDrawerItem.iconRes}"
+            app:iconTint="@color/colorAccent"
+            android:text="@{viewModel.navDrawerItem.title}"
+            />
+    </RelativeLayout>
+
+
+</layout>

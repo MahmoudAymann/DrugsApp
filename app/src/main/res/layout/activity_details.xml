@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
+    tools:context=".view.ui.activity.DetailsActivity">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="maymanm.drugsapp.viewmodel.activity.DetailsActivityViewModel" />
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/drawer_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        android:animateLayoutChanges="true">
+
+        <!--appbar details-->
+        <include
+        android:id="@+id/app_bar_details"
+        layout="@layout/app_bar_details"
+        bind:appBarDetails="@{viewModel}" />
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</layout>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="@color/dim_foreground_light_inverse"/>
+    <!--<stroke android:width="3dp" android:color="#B1BCBE" />-->
+    <corners android:bottomRightRadius="26dp" android:topRightRadius="26dp" android:bottomLeftRadius="26dp" android:topLeftRadius="26dp"/>
+    <padding android:left="@dimen/dp12w" android:top="@dimen/dp8h" android:right="@dimen/dp12w" android:bottom="@dimen/dp8h" />
+</shape>

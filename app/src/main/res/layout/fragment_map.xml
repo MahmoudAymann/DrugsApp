@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".view.ui.fragment.auth.MapFragment">
+
+    <RelativeLayout
+        android:id="@+id/root_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:animateLayoutChanges="true"
+        android:focusable="true"
+        android:focusableInTouchMode="true">
+        <fragment
+            android:id="@+id/map"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cv_show_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@id/rl_search"
+            android:layout_margin="16dp"
+            app:cardCornerRadius="8dp">
+
+            <RelativeLayout
+                android:id="@+id/layout_for_cardView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="16dp">
+
+                <TextView
+                    android:id="@+id/tv_current_address"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginBottom="@dimen/dp2h"
+                    android:text="@string/current_address"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/til_current_address"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_current_address"
+                    android:layout_centerHorizontal="true"
+                    app:boxCornerRadiusBottomEnd="8dp"
+                    app:boxCornerRadiusBottomStart="8dp"
+                    app:boxCornerRadiusTopEnd="8dp"
+                    app:boxCornerRadiusTopStart="8dp"
+                    app:hintEnabled="false"
+                    app:boxStrokeColor="@color/text_input_layout_border">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/et_current_address"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textMultiLine"
+                        android:text="@={viewModel.mapRequest.currentAddress}" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </RelativeLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <RelativeLayout
+            android:id="@+id/rl_search"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp16w"
+            android:layout_marginTop="@dimen/dp16h"
+            android:layout_marginEnd="@dimen/dp16w"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentTop="true"
+            android:visibility="gone">
+
+            <EditText
+                android:id="@+id/et_search"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/rounded_et_map_search"
+                android:drawableStart="@drawable/ic_search"
+                android:drawablePadding="@dimen/dp8w"
+                android:inputType="text"
+                android:text="@={viewModel.mapRequest.searchAddress}"
+                tools:ignore="Autofill,LabelFor"
+                app:onTextChangedListener="@{viewModel.searchTextWatcher}"/>
+            <ProgressBar
+                android:id="@+id/pb_search"
+                android:layout_width="@dimen/dp24w"
+                android:layout_height="@dimen/dp24h"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="@dimen/dp4w"
+                android:layout_alignParentStart="false"
+                android:visibility="@{viewModel.isSearching == true ? view.VISIBLE: view.GONE, default= gone}"
+                />
+        </RelativeLayout>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardView_list"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp150h"
+            android:layout_below="@id/rl_search"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_margin="16dp"
+            android:visibility="@{viewModel.isDone == true ? view.GONE : view.VISIBLE, default = gone}"
+            app:cardCornerRadius="16dp">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                tools:listitem="@layout/item_address_view"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+
+        </com.google.android.material.card.MaterialCardView>
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_save"
+            style="@style/ButtonUnelevatedStyle.Large"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="@dimen/dp8h"
+            android:onClick="@{()->viewModel.onSaveClick()}"
+            android:paddingStart="@dimen/dp64w"
+            android:paddingEnd="@dimen/dp64w"
+            android:text="@string/submit"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            app:cornerRadius="16dp" />
+    </RelativeLayout>
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="maymanm.drugsapp.viewmodel.fragment.auth.MapFragmentViewModel" />
+
+        <variable
+            name="view"
+            type="android.view.View" />
+    </data>
+</layout>

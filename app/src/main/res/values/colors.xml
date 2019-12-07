@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<!--    app colors-->
+    <color name="colorPrimary">#FFFFFF</color>
+    <color name="colorPrimaryDark">#000000</color>
+    <color name="colorAccent">#070A19</color>
+    <color name="colorAccent_white">#094A82</color>
+    <color name="colorAccentDark">#002c60</color>
+    <color name="colorAccentLight">#41B9DB</color>
+    <color name="text_color">@color/colorAccent</color>
+<color name="background_color">#EFEFEF</color>
+
+    <color name="text_input_label_color">#666666</color>
+    <color name="card_title_color">#DBDCDB</color>
+    <color name="transparent_white">#ebffffff</color>
+    <color name="grey_300">#E0E0E0</color>
+    <color name="yellow">#FFEB3B</color>
+    <color name="black">#000000</color>
+    <color name="white">#FFFFFF</color>
+    <color name="grand_logo_color">#F37021</color>
+    <color name="bg_accent_trans_light">#FEFAF6</color>
+    <color name="light_transparent_color">#E6FFFFFF</color>
+    <color name="background_grey">#ebebeb</color>
+    <color name="button_active">#E5E5E5</color>
+    <color name="grey_dark">#424242</color>
+    <color name="disabled_text_color">#9D9FA2</color>
+    <color name="blue_A700">#1A237E</color>
+    <!--    google colors-->
+    <item name="g_blue" type="color">#4285F4</item>
+    <item name="g_red" type="color">#DB4437</item>
+    <item name="g_yellow" type="color">#F4B400</item>
+    <item name="g_green" type="color">#0F9D58</item>
+
+    <color name="transparent">#00000000</color>
+    <color name="dim_foreground_dark">#bebebe</color>
+    <color name="dim_foreground_light">#323232</color>
+    <color name="hint_foreground_dark">#808080</color>
+    <color name="dim_foreground_light_inverse">#bebebe</color>
+    <color name="elevation_color">#DFDFDF</color>
+    <!--    social colors-->
+    <color name="facebook_color">#3b5999</color>
+    <color name="twitter_color">#55acee</color>
+    <color name="whatsapp_color">#25D366</color>
+
+    <color name="nav_drawer_item_text_color">#212121</color>
+    <color name="transparent_dark">#6F000000</color>
+    <color name="transparent_dark_spinner_bg">#F27E7E7E</color>
+    <color name="transparent_white_2">#77ffffff</color>
+    <color name="off_white">#eeeeee</color>
+    <color name="shop_color_accent">#0A364F</color>
+    <color name="tool_bar_title_color">#000</color>
+    <color name="order_input_icon_color">#5C6D75</color>
+    <color name="gray_dim">#EBEBEB</color>
+    <color name="white_gray">#939293</color>
+    <color name="black_trans">#DAEBEBEB</color>
+    <color name="colorAccent_opacity">#FDDFC5</color>
+    <color name="contact_us_background">#FFF9F4</color>
+    <color name="order_status_new_order">@color/colorAccentLight</color>
+    <color name="order_status_transit">@color/colorAccent</color>
+    <color name="order_status_delivered">@color/colorAccentDark</color>
+    <color name="packing_card_color">#F3F3F3</color>
+    <color name="text_input_layout_border_black">#949494</color>
+
+    <color name="chat_border">#FED9BC</color>
+    <color name="chat_divider_color">#DDEFFE</color>
+    <color name="order_status_accepted">@color/g_green</color>
+    <color name="dim_black">#6F000000</color>
+</resources>

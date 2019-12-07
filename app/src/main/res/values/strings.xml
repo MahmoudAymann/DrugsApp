@@ -1,0 +1,378 @@
+<resources>
+    <string name="app_name" translatable="false">Drugs Home</string>
+    <string name="navigation_drawer_open" translatable="false">Open navigation drawer</string>
+    <string name="navigation_drawer_close" translatable="false">Close navigation drawer</string>
+
+    <string name="new_user">New user</string>
+    <string name="email">Email</string>
+    <string name="no_data_found">no data found</string>
+    <string name="you_must_open_gps_to_get_your_location_info">you must open GPS to get your location info</string>
+    <string name="you_must_allow_permission_to_continue">you must allow permission to continue</string>
+    <string name="permission_denied">Permission denied</string>
+    <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
+    <string name="ask_again">Ask again</string>
+    <string name="ignore">Ignore</string>
+    <string name="gps_disabled">GPS Disabled!</string>
+    <string name="warning">WARNING!</string>
+    <string name="missing_perm_msg">you need to allow permission</string>
+    <string name="open_settings">Open settings</string>
+    <string name="language">Language</string>
+    <string name="arabic">Arabic</string>
+    <string name="english">English</string>
+
+    <string name="programming_and_design">Programming and Design</string>
+    <string name="grand_site" translatable="false">www.2grand.net</string>
+    <string name="grand_phone" translatable="false">+0201157771069</string>
+    <string name="call">call</string>
+    <string name="whatsapp">whatsapp</string>
+    <string name="exit">Exit</string>
+    <string name="phone">Phone</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="sign_in_with_name_amp_password"><![CDATA[Sign in with name & password]]></string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="create_account">Create Account</string>
+    <string name="skip_login">Skip Login</string>
+    <string name="sign_in_with_phone">Sign in with phone</string>
+    <string name="sign_up">Signup</string>
+    <string name="check_input_message">Check input message</string>
+    <string name="complete_register">Complete register</string>
+    <string name="verification_code">Verification code</string>
+    <string name="resend_code">Resend code</string>
+    <string name="exit_warning">are you sure you want to exit the app?</string>
+    <string name="home">Home</string>
+    <string name="account">Account</string>
+    <string name="profile">Profile</string>
+    <string name="notification">Notification</string>
+    <string name="my_orders">My orders</string>
+    <string name="rate">Rate app</string>
+    <string name="privacy_policy">Privacy Policy</string>
+    <string name="about_us">About us</string>
+    <string name="provide_service_login">Provide service login</string>
+    <string name="log_out">Logout</string>
+    <string name="new_account">New Account</string>
+    <string name="write_your_phone">write your phone number</string>
+    <string name="current_address">Current address:</string>
+    <string name="update">Update</string>
+    <string name="name">Name</string>
+    <string name="logout_warning">are you sure you want to logout?</string>
+    <string name="choose_service">Choose Service</string>
+    <string name="schedule">Schedule</string>
+    <string name="urgent">Urgent</string>
+    <string name="create_order">Create Order</string>
+    <string name="description">Description</string>
+    <string name="location">Location</string>
+    <string name="date">Date</string>
+    <string name="time">Time</string>
+    <string name="order_now">Order now</string>
+    <string name="enter_name">Enter name</string>
+    <string name="fill_required_data_plz">Fill the required data please</string>
+    <string name="pending">Pending</string>
+    <string name="other">Other</string>
+    <string name="accept">Accept</string>
+    <string name="cancel">Cancel</string>
+    <string name="guarantee_number">Guarntee Number</string>
+    <string name="finish">Finish</string>
+    <string name="iqd">IQD</string>
+    <string name="rate_">Rate:</string>
+    <string name="cost">Cost:</string>
+    <string name="payment">Payment</string>
+    <string name="submit">Submit</string>
+    <string name="pay_on_delivery">Cash on delivery</string>
+    <string name="pay_online">Payment online</string>
+    <string name="description_">Description:</string>
+    <string name="date_">Date:</string>
+    <string name="time_">Time:</string>
+    <string name="location_">Location:</string>
+    <string name="apply">Apply</string>
+    <string name="write_the_cost_please">Write the cost please,</string>
+    <string name="order_details">Order Details</string>
+    <string name="chat">chat</string>
+    <string name="saturday">Saturday</string>
+    <string name="sunday">Sunday</string>
+    <string name="monday">Monday</string>
+    <string name="tuesday">Tuesday</string>
+    <string name="wednesday">Wednesday</string>
+    <string name="thursday">Thursday</string>
+    <string name="friday">Friday</string>
+    <string name="select_days_">Select days:</string>
+    <string name="select_time_">Select time:</string>
+    <string name="from">From</string>
+    <string name="to">To</string>
+    <string name="time_table">Time table</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="card_name">Card name</string>
+    <string name="points">Points</string>
+    <string name="favourite">Favourite</string>
+    <string name="cart">Cart</string>
+    <string name="packing_card">Packing card</string>
+    <string name="be_delegate">Be a delegate</string>
+    <string name="be_shipping_company">Be a shipping company</string>
+    <string name="be_a_drive">Be a drive</string>
+    <string name="packing_card_location">Packing card location</string>
+    <string name="contact_us">Contact us</string>
+    <string name="suggestion_and_complain"><![CDATA[Suggestions&Complain]]></string>
+    <string name="new_password">New password</string>
+    <string name="new_password_confirm">New password confirm</string>
+    <string name="kurdish">Kurdish</string>
+    <string name="select_your_country_">Select your country:</string>
+    <string name="select_your_language_">Select app language:</string>
+    <string name="turn_on_your_location">turn on your location</string>
+    <string name="turn_location_on_bio">To continues, let your device turn on location, which uses Google’s location service</string>
+    <string name="yes_turn_it_on">yes turn it on</string>
+    <string name="skip">Skip</string>
+    <string name="follow">follow</string>
+    <string name="shops">Shops</string>
+    <string name="department">Department</string>
+    <string name="departments">Departments</string>
+    <string name="products">Products</string>
+    <string name="enter_password_to_continue">enter password to continue</string>
+    <string name="store_locked">Store Locked</string>
+    <string name="title_activity_scrolling" translatable="false">ScrollingActivity</string>
+    <string name="large_text" translatable="false">
+        "Material is the metaphor."
+        "A material metaphor is the unifying theory of a rationalized space and a system of motion."
+        "The material is grounded in tactile reality, inspired by the study of paper and ink, yet "
+        "technologically advanced and open to imagination and magic.\n"
+        "Surfaces and edges of the material provide visual cues that are grounded in reality. The "
+        "use of familiar tactile attributes helps users quickly understand affordances. Yet the "
+        "flexibility of the material creates new affordances that supercede those in the physical "
+        "world, without breaking the rules of physics.\n"
+        "The fundamentals of light, surface, and movement are key to conveying how objects move, "
+        "interact, and exist in space and in relation to each other. Realistic lighting shows "
+        "seams, divides space, and indicates moving parts.\n\n"
+
+        "Bold, graphic, intentional.\n\n"
+
+        "The foundational elements of print based design typography, grids, space, scale, color, "
+        "and use of imagery guide visual treatments. These elements do far more than please the "
+        "eye. They create hierarchy, meaning, and focus. Deliberate color choices, edge to edge "
+        "imagery, large scale typography, and intentional white space create a bold and graphic "
+        "interface that immerse the user in the experience.\n"
+        "An emphasis on user actions makes core functionality immediately apparent and provides "
+        "waypoints for the user.\n\n"
+
+        "Motion provides meaning.\n\n"
+
+        "Motion respects and reinforces the user as the prime mover. Primary user actions are "
+        "inflection points that initiate motion, transforming the whole design.\n"
+        "All action takes place in a single environment. Objects are presented to the user without "
+        "breaking the continuity of experience even as they transform and reorganize.\n"
+        "Motion is meaningful and appropriate, serving to focus attention and maintain continuity. "
+        "Feedback is subtle yet clear. Transitions are efﬁcient yet coherent.\n\n"
+
+        "3D world.\n\n"
+
+        "The material environment is a 3D space, which means all objects have x, y, and z "
+        "dimensions. The z-axis is perpendicularly aligned to the plane of the display, with the "
+        "positive z-axis extending towards the viewer. Every sheet of material occupies a single "
+        "position along the z-axis and has a standard 1dp thickness.\n"
+        "On the web, the z-axis is used for layering and not for perspective. The 3D world is "
+        "emulated by manipulating the y-axis.\n\n"
+
+        "Light and shadow.\n\n"
+
+        "Within the material environment, virtual lights illuminate the scene. Key lights create "
+        "directional shadows, while ambient light creates soft shadows from all angles.\n"
+        "Shadows in the material environment are cast by these two light sources. In Android "
+        "development, shadows occur when light sources are blocked by sheets of material at "
+        "various positions along the z-axis. On the web, shadows are depicted by manipulating the "
+        "y-axis only. The following example shows the card with a height of 6dp.\n\n"
+
+        "Resting elevation.\n\n"
+
+        "All material objects, regardless of size, have a resting elevation, or default elevation "
+        "that does not change. If an object changes elevation, it should return to its resting "
+        "elevation as soon as possible.\n\n"
+
+        "Component elevations.\n\n"
+
+        "The resting elevation for a component type is consistent across apps (e.g., FAB elevation "
+        "does not vary from 6dp in one app to 16dp in another app).\n"
+        "Components may have different resting elevations across platforms, depending on the depth "
+        "of the environment (e.g., TV has a greater depth than mobile or desktop).\n\n"
+
+        "Responsive elevation and dynamic elevation offsets.\n\n"
+
+        "Some component types have responsive elevation, meaning they change elevation in response "
+        "to user input (e.g., normal, focused, and pressed) or system events. These elevation "
+        "changes are consistently implemented using dynamic elevation offsets.\n"
+        "Dynamic elevation offsets are the goal elevation that a component moves towards, relative "
+        "to the component’s resting state. They ensure that elevation changes are consistent "
+        "across actions and component types. For example, all components that lift on press have "
+        "the same elevation change relative to their resting elevation.\n"
+        "Once the input event is completed or cancelled, the component will return to its resting "
+        "elevation.\n\n"
+
+        "Avoiding elevation interference.\n\n"
+
+        "Components with responsive elevations may encounter other components as they move between "
+        "their resting elevations and dynamic elevation offsets. Because material cannot pass "
+        "through other material, components avoid interfering with one another any number of ways, "
+        "whether on a per component basis or using the entire app layout.\n"
+        "On a component level, components can move or be removed before they cause interference. "
+        "For example, a floating action button (FAB) can disappear or move off screen before a "
+        "user picks up a card, or it can move if a snackbar appears.\n"
+        "On the layout level, design your app layout to minimize opportunities for interference. "
+        "For example, position the FAB to one side of stream of a cards so the FAB won’t interfere "
+        "when a user tries to pick up one of cards.\n\n"
+    </string>
+    <string name="rate_now">Rate now</string>
+    <string name="size">Size</string>
+    <string name="color">Color</string>
+    <string name="details">Details</string>
+    <string name="price">PRICE</string>
+    <string name="add_to_cart">Add to cart</string>
+    <string name="not_avail">not available</string>
+    <string name="sub_total">Sub Total</string>
+    <string name="tax">Tax</string>
+    <string name="shipping">Shipping</string>
+    <string name="product_details">Product Details</string>
+    <string name="added_to_cart">Added to cart</string>
+    <string name="make_order_now">do you want to create an order now?</string>
+    <string name="go_to_cart">Go to cart</string>
+    <string name="continue_">Continue</string>
+    <string name="color_">Color:</string>
+    <string name="size_">Size:</string>
+    <string name="select_delivery_method">Select Delivery Method</string>
+    <string name="add_shipping">add shipping</string>
+    <string name="at_home">At Home</string>
+    <string name="without_shipping">without shipping</string>
+    <string name="from_shop">From Shop</string>
+    <string name="select_shipping_company">Select Shipping Company</string>
+    <string name="points_payment">Points payment</string>
+    <string name="online_payment">Online payment</string>
+    <string name="select_payment_method">Select Payment method</string>
+    <string name="delegate">Delegate</string>
+    <string name="checkout">Checkout</string>
+    <string name="change">change</string>
+    <string name="shipping_address">Shipping Address</string>
+    <string name="shipping_price">Shipping Price</string>
+    <string name="action_search">Search</string>
+    <string name="search_hint">search...</string>
+    <string name="fname">First Name</string>
+    <string name="lname">Last Name</string>
+    <string name="country">Country</string>
+    <string name="city">City</string>
+    <string name="select_country">Select country</string>
+    <string name="select_city">Select city</string>
+    <string name="mobile">Mobile</string>
+    <string name="facebook">Facebook</string>
+    <string name="twitter">Twitter</string>
+    <string name="delegate_details_">Delegate Details:</string>
+    <string name="order_details_">Order Details:</string>
+    <string name="quantity_">Quantity:</string>
+    <string name="shipping_company_details_">Shipping Company Details:</string>
+    <string name="invalid_mail">invalid mail</string>
+    <string name="invalid_url">invalid url</string>
+    <string name="complain_title">Complain Title</string>
+    <string name="write_your_title_here">write your title here</string>
+    <string name="complain">Complain</string>
+    <string name="send_complain">Send Complain</string>
+    <string name="birth_date">Birthdate</string>
+    <string name="car_name">Car Name</string>
+    <string name="car_color">Car Color</string>
+    <string name="car_image">Car Image</string>
+    <string name="car_number">Car Number</string>
+    <string name="save">Save</string>
+    <string name="resend_code_at">resend code at:</string>
+    <string name="enter_code">enter code</string>
+    <string name="edit">Edit</string>
+    <string name="account_number">Account number</string>
+    <string name="address">Address</string>
+    <string name="change_password">Change Password</string>
+    <string name="notification_settings">Notification Settings</string>
+    <string name="remove_image">remove image</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="old_password">Old Password</string>
+    <string name="new_password_isnt_match">new password isnt identical</string>
+    <string name="packing_card_number">Packing card number</string>
+    <string name="add_packing_card">Add packing card</string>
+    <string name="transfer_packing_card">Transfer Packing Card</string>
+    <string name="receive_packing_card">Recevie Packing card</string>
+    <string name="following">following</string>
+    <string name="select_your_address">Select your address</string>
+    <string name="pay_card">Pay Card</string>
+    <string name="change_language">Change Language</string>
+    <string name="select_language">Select Language</string>
+    <string name="orders">Orders</string>
+    <string name="notifications">Notifications</string>
+    <string name="do_you_have_a_connection_service_from_a_store_to_a_customer_within_the_government">Do you have a connection service from a store to a customer within the government?</string>
+    <string name="no">No</string>
+    <string name="yes">Yes</string>
+    <string name="be_a_delegate">Be a delegate</string>
+    <string name="id_image">ID Image</string>
+    <string name="select_image">select image...</string>
+    <string name="photo_uploaded">photo uploaded.</string>
+    <string name="license">License image</string>
+    <string name="select_location">select location</string>
+    <string name="write_here">write here</string>
+    <string name="company_logo">Company logo</string>
+    <string name="real_shop_name">Real shop name</string>
+    <string name="shop_name_app">Shop name app</string>
+    <string name="write_your_password">write your password</string>
+    <string name="shop_logo">Shop logo</string>
+    <string name="category">Category</string>
+    <string name="terms_and_conditions">Terms and conidtions</string>
+    <string name="select_category">Select category</string>
+    <string name="be_a_shop">Be a shop</string>
+    <string name="enter_phone">enter phone</string>
+    <string name="selectCode">Select code</string>
+    <string name="enter_your_phone_number">Enter your phone number</string>
+    <string name="send_to">Send to</string>
+    <string name="user">User</string>
+    <string name="shop">Shop</string>
+    <string name="select_type">select type</string>
+    <string name="say_something">Say something...</string>
+    <string name="from_sec_ago">1 second ago</string>
+    <string name="enter_vocher_code">Enter Vocher Code</string>
+    <string name="image_saved">image saved</string>
+    <string name="send_money">Send Money</string>
+    <string name="receive_money">Receive Money</string>
+    <string name="deposit_money">Deposit Money</string>
+    <string name="get_money">Get Money</string>
+    <string name="taxi">Taxi</string>
+    <string name="wrong_phone_number">wrong phone number</string>
+    <string name="device_blocked">device is blocked due to many requests</string>
+    <string name="welcome_in_arabic">welcome in arabic</string>
+    <string name="sign_in_to_continue">sign in to continue</string>
+    <string name="don_t_have_account">don\'t have account?</string>
+    <string name="register_now">Register now</string>
+    <string name="confirm_password">Confirm password</string>
+    <string name="already_have_account">already have account?</string>
+    <string name="enter_verification_code">Enter verification code</string>
+    <string name="verified_successfully">verified successfully</string>
+    <string name="questions">Questions</string>
+    <string name="house">House</string>
+    <string name="add">Add</string>
+    <string name="advertisement">advertisement</string>
+    <string name="all_departments">see all departments</string>
+    <string name="change_level">Change level</string>
+    <string name="do_exam">Do Exam</string>
+    <string name="share">Share</string>
+    <string name="send">Send</string>
+    <string name="suggestion_message">Message</string>
+    <string name="learn_to_improve_ur_language">Learn to improve ur language</string>
+    <string name="learn_words_or_sentences">learn words or setences</string>
+    <string name="sentences">sentences</string>
+    <string name="words">words</string>
+    <string name="search">Search</string>
+    <string name="exam_to_improve_ur_language">exam to improve your language</string>
+    <string name="enter_your_email">Enter your email</string>
+    <string name="web_site">Web site</string>
+    <string name="add_word">Add word</string>
+    <string name="drugs_home">DRUGS-HOME</string>
+    <string name="or">OR</string>
+    <string name="sign_in">Sign In</string>
+    <string name="you_have_an_account">you have an account, </string>
+    <string name="log_in_with_facebook">LOG IN WITH FACEBOOK</string>
+    <string name="remember_me">Remember me</string>
+    <string name="if_you_click_login_with_facebook"><![CDATA[If you click \'Login with Facebook\' and you are not a Drugs-Home user, you will be registered and you agree to our terms privacy& conditions]]></string>
+    <string name="email_address_or_phone">Email address or phone</string>
+    <string name="email_address">Email address</string>
+    <string name="verify_password">verify password</string>
+    <string name="mobile_number">Mobile number</string>
+
+
+</resources>

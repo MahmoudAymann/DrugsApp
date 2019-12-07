@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".view.ui.fragment.dialogs.LogoutDialogFragment">
+
+    <RelativeLayout
+        android:id="@+id/ll_root"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <View
+            android:id="@+id/view1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/cv_root"
+            android:layout_alignParentTop="true"
+            android:background="@android:color/transparent"
+            android:layout_centerHorizontal="true"
+            android:onClick="@{()->clickHandler.onOuterViewClick()}"
+            />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cv_root"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="16dp"
+            android:layout_centerInParent="true"
+            android:layout_marginEnd="@dimen/dp16w"
+            android:layout_marginStart="@dimen/dp16w">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="8dp">
+
+                <RelativeLayout
+                    android:id="@+id/ll_header"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/dp16h"
+                    android:layout_marginStart="@dimen/dp24w"
+                    android:layout_marginEnd="@dimen/dp24w"
+                    android:layout_marginBottom="@dimen/dp28h"
+                    android:layout_alignParentBottom="false">
+
+                    <TextView
+                        android:id="@+id/tv_msg"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/logout_warning"
+                        android:textSize="@dimen/sp14"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:textColor="@color/black"
+                        android:layout_toStartOf="@id/anim_view"/>
+
+                    <com.airbnb.lottie.LottieAnimationView
+                        android:id="@+id/anim_view"
+                        android:layout_width="@dimen/dp30w"
+                        android:layout_height="@dimen/dp30h"
+                        android:layout_alignParentEnd="true"
+                        app:lottie_autoPlay="true"
+                        app:lottie_loop="true"
+                        app:lottie_repeatCount="1"
+                        app:lottie_rawRes="@raw/sad_anim"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="@dimen/dp8w"
+                        android:visibility="visible"/>
+
+
+                </RelativeLayout>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_logout"
+                    style="@style/Widget.MaterialComponents.Button.TextButton.Dialog"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/log_out"
+                    android:layout_below="@id/ll_header"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="false"
+                    android:layout_alignParentStart="false"
+                    android:textColor="@color/black"
+                    android:onClick="@{()->clickHandler.onLogoutClick()}"
+                    />
+
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_cancel"
+                    style="@style/Widget.MaterialComponents.Button.TextButton.Dialog"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/cancel"
+                    android:layout_below="@id/ll_header"
+                    android:layout_toStartOf="@id/btn_logout"
+                    android:layout_alignParentStart="false"
+                    android:layout_alignParentBottom="false"
+                    android:textColor="@color/black"
+                    android:onClick="@{()->clickHandler.onCancelClick()}"
+                    />
+
+            </RelativeLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <View
+            android:id="@+id/view2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/cv_root"
+            android:layout_alignParentBottom="true"
+            android:background="@android:color/transparent"
+            android:layout_centerHorizontal="true"
+            android:onClick="@{()->clickHandler.onOuterViewClick()}"
+            />
+
+    </RelativeLayout>
+
+    <data>
+        <variable
+            name="clickHandler"
+            type="maymanm.drugsapp.view.ui.clickhandler.DialogsClickHandler" />
+    </data>
+
+</layout>
