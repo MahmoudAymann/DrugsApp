@@ -26,7 +26,12 @@ public class ProductDetailViewModel extends BaseViewModel {
     }
 
     private void getData(int pos) {
-        item = drugsResponse.getData().getDrugs().get(pos);
+        for (int i=0;i<drugsResponse.getData().getDrugs().size();i++){
+            if (pos == drugsResponse.getData().getDrugs().get(i).getId()){
+                item = drugsResponse.getData().getDrugs().get(i);
+                break;
+            }
+        }
         notifyChange();
         try {
             tabletsAdapter.updateDataList(drugsResponse.getData().getDrugs().get(pos).getTablets());

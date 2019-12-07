@@ -12,7 +12,7 @@
         android:paddingTop="4dp"
         android:paddingEnd="10dp"
         android:paddingBottom="10dp"
-        tools:text="Hi, How are you?"
+        android:text="@{viewModel.item.message}"
         android:textColor="@color/white"
         android:layout_marginTop="@dimen/dp8h"
         android:layout_marginBottom="@dimen/dp8h"

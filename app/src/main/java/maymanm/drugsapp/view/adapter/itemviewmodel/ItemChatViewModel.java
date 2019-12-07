@@ -4,9 +4,9 @@ import maymanm.drugsapp.base.BaseViewModel;
 import maymanm.drugsapp.model.chat.ChatItem;
 
 public class ItemChatViewModel extends BaseViewModel {
-    public ChatItem ChatItem;
-    public ItemChatViewModel(ChatItem ChatItem) {
-        this.ChatItem = ChatItem;
+    public ChatItem item;
+    public ItemChatViewModel(ChatItem item) {
+        this.item = item;
     }
 
 

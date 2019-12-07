@@ -17,6 +17,7 @@ import maymanm.drugsapp.R;
 import maymanm.drugsapp.base.constantsutils.Codes;
 import maymanm.drugsapp.base.view.BaseFragment;
 import maymanm.drugsapp.databinding.FragmentDisabledBinding;
+import maymanm.drugsapp.viewmodel.fragment.main.DisabledViewModel;
 import maymanm.drugsapp.viewmodel.fragment.main.DrugsViewModel;
 
 //import maymanm.drugsapp.model.home.CategoriesItem;
@@ -27,7 +28,7 @@ import maymanm.drugsapp.viewmodel.fragment.main.DrugsViewModel;
 public class DisabledFragment extends BaseFragment implements Observer<Object> {
 
     private FragmentDisabledBinding binding;
-    public DrugsViewModel viewModel;
+    public DisabledViewModel viewModel;
 
     public DisabledFragment() {
 
@@ -43,7 +44,7 @@ public class DisabledFragment extends BaseFragment implements Observer<Object> {
     }
 
     private void setupViewModel() {
-        viewModel = new ViewModelProvider(this).get(DrugsViewModel.class);
+        viewModel = new ViewModelProvider(this).get(DisabledViewModel.class);
         binding.setViewModel(viewModel);
         viewModel.getMutableLiveData().observe(getViewLifecycleOwner(), this);
     }
