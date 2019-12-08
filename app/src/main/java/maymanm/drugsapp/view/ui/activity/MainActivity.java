@@ -67,7 +67,7 @@ public class MainActivity extends ParentActivity implements Observer<Object> {
                     tab.setText(getString(R.string.drugs));
                     break;
                 case 1:
-                    tab.setText(getString(R.string.shops));
+                    tab.setText(getString(R.string.discover));
                     break;
                 case 2:
                     tab.setText(getString(R.string.disableds));

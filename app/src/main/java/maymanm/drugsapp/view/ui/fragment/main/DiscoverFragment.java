@@ -18,6 +18,8 @@ import maymanm.drugsapp.base.constantsutils.Codes;
 import maymanm.drugsapp.base.view.BaseFragment;
 import maymanm.drugsapp.databinding.FragmentDiscoverBinding;
 import maymanm.drugsapp.databinding.FragmentDrugsBinding;
+import maymanm.drugsapp.util.ApplicationUtil;
+import maymanm.drugsapp.viewmodel.fragment.main.DiscoverViewModel;
 import maymanm.drugsapp.viewmodel.fragment.main.DrugsViewModel;
 
 //import maymanm.drugsapp.model.home.CategoriesItem;
@@ -28,7 +30,7 @@ import maymanm.drugsapp.viewmodel.fragment.main.DrugsViewModel;
 public class DiscoverFragment extends BaseFragment implements Observer<Object> {
 
     private FragmentDiscoverBinding binding;
-    public DrugsViewModel viewModel;
+    public DiscoverViewModel viewModel;
 
     public DiscoverFragment() {
 
@@ -44,7 +46,7 @@ public class DiscoverFragment extends BaseFragment implements Observer<Object> {
     }
 
     private void setupViewModel() {
-        viewModel = new ViewModelProvider(this).get(DrugsViewModel.class);
+        viewModel = new ViewModelProvider(this).get(DiscoverViewModel.class);
         binding.setViewModel(viewModel);
         viewModel.getMutableLiveData().observe(getViewLifecycleOwner(), this);
     }
@@ -57,6 +59,12 @@ public class DiscoverFragment extends BaseFragment implements Observer<Object> {
                 showProgressAnimation(result);
             } else if (result == Codes.SHOW_MESSAGE) {
                 showMessage(viewModel.getMessage());
+            }else if (result == Codes.ONE){
+                ApplicationUtil.openWebIntent(requireActivity(), "https://www.omnicalculator.com/health/dosage");
+            }else if (result == Codes.TWO){
+                ApplicationUtil.openWebIntent(requireActivity(), "http://www.medical-events.info");
+            }else if (result == Codes.THREE){
+                ApplicationUtil.openWebIntent(requireActivity(), "https://study.com/medical_field_education.html");
             }
         }
     }

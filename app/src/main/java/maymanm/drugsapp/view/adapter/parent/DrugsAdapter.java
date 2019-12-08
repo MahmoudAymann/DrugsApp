@@ -17,6 +17,7 @@ import java.util.Objects;
 import maymanm.drugsapp.R;
 import maymanm.drugsapp.databinding.ItemDrugsViewBinding;
 import maymanm.drugsapp.model.drugs.DrugsItem;
+import maymanm.drugsapp.util.PreferenceHelperManager;
 import maymanm.drugsapp.view.adapter.itemviewmodel.ItemDrugViewModel;
 import maymanm.drugsapp.view.adapter.viewholder.DrugsViewHolder;
 

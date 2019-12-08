@@ -132,6 +132,10 @@ public class Codes {
     public static final int SIDE_EFFECTS = 30116;
     public static final int PRODUCT_INFO = 30117;
     public static final int UPDATE_DIALOG = 30118;
+    public static final int ONE = 30119;
+    public static final int TWO = 30120;
+    public static final int THREE = 30121;
+    public static final int DOSE = 30122;
 
 
     public static int TYPE_VIDEO_REQUEST_CODE = 11;

@@ -1,194 +1,218 @@
 package maymanm.drugsapp.model.drugs;
 
 import java.util.List;
+
 import com.google.gson.annotations.SerializedName;
 
-public class DrugsItem{
+public class DrugsItem {
 
-	@SerializedName("image")
-	private String image;
+    @SerializedName("image")
+    private String image;
 
-	@SerializedName("overdose")
-	private String overdose;
+    @SerializedName("overdose")
+    private String overdose;
 
-	@SerializedName("contraindications")
-	private String contraindications;
+    @SerializedName("contraindications")
+    private String contraindications;
 
-	@SerializedName("precautions")
-	private String precautions;
+    @SerializedName("precautions")
+    private String precautions;
 
-	@SerializedName("pregnancy")
-	private String pregnancy;
+    @SerializedName("pregnancy")
+    private String pregnancy;
 
-	@SerializedName("packaging")
-	private String packaging;
+    @SerializedName("dose")
+    private String dose;
 
-	@SerializedName("interactions")
-	private String interactions;
 
-	@SerializedName("side_effects")
-	private String sideEffects;
+    @SerializedName("category")
+    private int category;
 
-	@SerializedName("rate")
-	private String rate;
+    public String getDose() {
+        return dose;
+    }
 
-	@SerializedName("composition")
-	private String composition;
+    public void setDose(String dose) {
+        this.dose = dose;
+    }
 
-	@SerializedName("pharmacology")
-	private String pharmacology;
+    public int getCategory() {
+        return category;
+    }
 
-	@SerializedName("name")
-	private String name;
+    public void setCategory(int category) {
+        this.category = category;
+    }
 
-	@SerializedName("id")
-	private int id;
+    @SerializedName("packaging")
+    private String packaging;
 
-	@SerializedName("indication")
-	private String indication;
+    @SerializedName("interactions")
+    private String interactions;
 
-	@SerializedName("tablets")
-	private List<TabletsItem> tablets;
+    @SerializedName("side_effects")
+    private String sideEffects;
 
-	public void setImage(String image){
-		this.image = image;
-	}
+    @SerializedName("rate")
+    private String rate;
 
-	public String getImage(){
-		return image;
-	}
+    @SerializedName("composition")
+    private String composition;
 
-	public void setOverdose(String overdose){
-		this.overdose = overdose;
-	}
+    @SerializedName("pharmacology")
+    private String pharmacology;
 
-	public String getOverdose(){
-		return overdose;
-	}
+    @SerializedName("name")
+    private String name;
 
-	public void setContraindications(String contraindications){
-		this.contraindications = contraindications;
-	}
+    @SerializedName("id")
+    private int id;
 
-	public String getContraindications(){
-		return contraindications;
-	}
+    @SerializedName("indication")
+    private String indication;
 
-	public void setPrecautions(String precautions){
-		this.precautions = precautions;
-	}
+    @SerializedName("tablets")
+    private List<TabletsItem> tablets;
 
-	public String getPrecautions(){
-		return precautions;
-	}
+    public void setImage(String image) {
+        this.image = image;
+    }
 
-	public void setPregnancy(String pregnancy){
-		this.pregnancy = pregnancy;
-	}
+    public String getImage() {
+        return image;
+    }
 
-	public String getPregnancy(){
-		return pregnancy;
-	}
+    public void setOverdose(String overdose) {
+        this.overdose = overdose;
+    }
 
-	public void setPackaging(String packaging){
-		this.packaging = packaging;
-	}
+    public String getOverdose() {
+        return overdose;
+    }
 
-	public String getPackaging(){
-		return packaging;
-	}
+    public void setContraindications(String contraindications) {
+        this.contraindications = contraindications;
+    }
 
-	public void setInteractions(String interactions){
-		this.interactions = interactions;
-	}
+    public String getContraindications() {
+        return contraindications;
+    }
 
-	public String getInteractions(){
-		return interactions;
-	}
+    public void setPrecautions(String precautions) {
+        this.precautions = precautions;
+    }
 
-	public void setSideEffects(String sideEffects){
-		this.sideEffects = sideEffects;
-	}
+    public String getPrecautions() {
+        return precautions;
+    }
 
-	public String getSideEffects(){
-		return sideEffects;
-	}
+    public void setPregnancy(String pregnancy) {
+        this.pregnancy = pregnancy;
+    }
 
-	public void setRate(String rate){
-		this.rate = rate;
-	}
+    public String getPregnancy() {
+        return pregnancy;
+    }
 
-	public String getRate(){
-		return rate;
-	}
+    public void setPackaging(String packaging) {
+        this.packaging = packaging;
+    }
 
-	public void setComposition(String composition){
-		this.composition = composition;
-	}
+    public String getPackaging() {
+        return packaging;
+    }
 
-	public String getComposition(){
-		return composition;
-	}
+    public void setInteractions(String interactions) {
+        this.interactions = interactions;
+    }
 
-	public void setPharmacology(String pharmacology){
-		this.pharmacology = pharmacology;
-	}
+    public String getInteractions() {
+        return interactions;
+    }
 
-	public String getPharmacology(){
-		return pharmacology;
-	}
+    public void setSideEffects(String sideEffects) {
+        this.sideEffects = sideEffects;
+    }
 
-	public void setName(String name){
-		this.name = name;
-	}
+    public String getSideEffects() {
+        return sideEffects;
+    }
 
-	public String getName(){
-		return name;
-	}
+    public void setRate(String rate) {
+        this.rate = rate;
+    }
 
-	public void setId(int id){
-		this.id = id;
-	}
+    public String getRate() {
+        return rate;
+    }
 
-	public int getId(){
-		return id;
-	}
+    public void setComposition(String composition) {
+        this.composition = composition;
+    }
 
-	public void setIndication(String indication){
-		this.indication = indication;
-	}
+    public String getComposition() {
+        return composition;
+    }
 
-	public String getIndication(){
-		return indication;
-	}
+    public void setPharmacology(String pharmacology) {
+        this.pharmacology = pharmacology;
+    }
 
-	public void setTablets(List<TabletsItem> tablets){
-		this.tablets = tablets;
-	}
+    public String getPharmacology() {
+        return pharmacology;
+    }
 
-	public List<TabletsItem> getTablets(){
-		return tablets;
-	}
+    public void setName(String name) {
+        this.name = name;
+    }
 
-	@Override
- 	public String toString(){
-		return 
-			"DrugsItem{" + 
-			"image = '" + image + '\'' + 
-			",overdose = '" + overdose + '\'' + 
-			",contraindications = '" + contraindications + '\'' + 
-			",precautions = '" + precautions + '\'' + 
-			",pregnancy = '" + pregnancy + '\'' + 
-			",packaging = '" + packaging + '\'' + 
-			",interactions = '" + interactions + '\'' + 
-			",side_effects = '" + sideEffects + '\'' + 
-			",rate = '" + rate + '\'' + 
-			",composition = '" + composition + '\'' + 
-			",pharmacology = '" + pharmacology + '\'' + 
-			",name = '" + name + '\'' + 
-			",id = '" + id + '\'' + 
-			",indication = '" + indication + '\'' + 
-			",tablets = '" + tablets + '\'' + 
-			"}";
-		}
+    public String getName() {
+        return name;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setIndication(String indication) {
+        this.indication = indication;
+    }
+
+    public String getIndication() {
+        return indication;
+    }
+
+    public void setTablets(List<TabletsItem> tablets) {
+        this.tablets = tablets;
+    }
+
+    public List<TabletsItem> getTablets() {
+        return tablets;
+    }
+
+    @Override
+    public String toString() {
+        return
+                "DrugsItem{" +
+                        "image = '" + image + '\'' +
+                        ",overdose = '" + overdose + '\'' +
+                        ",contraindications = '" + contraindications + '\'' +
+                        ",precautions = '" + precautions + '\'' +
+                        ",pregnancy = '" + pregnancy + '\'' +
+                        ",packaging = '" + packaging + '\'' +
+                        ",interactions = '" + interactions + '\'' +
+                        ",side_effects = '" + sideEffects + '\'' +
+                        ",rate = '" + rate + '\'' +
+                        ",composition = '" + composition + '\'' +
+                        ",pharmacology = '" + pharmacology + '\'' +
+                        ",name = '" + name + '\'' +
+                        ",id = '" + id + '\'' +
+                        ",indication = '" + indication + '\'' +
+                        ",tablets = '" + tablets + '\'' +
+                        "}";
+    }
 }

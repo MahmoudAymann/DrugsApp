@@ -43,6 +43,11 @@ public class NavDrawerContainer {
         items.add(new NavDrawerItem(Codes.DOWNLOAD_UPDATES, getString(R.string.download_updates), 0));
 
         items.add(new NavDrawerItem(Codes.SETTINGS_SCREEN, getString(R.string.settings), 0));
+
+        items.add(new NavDrawerItem(Codes.RATE_SCREEN, getString(R.string.rate), 0));
+
+        items.add(new NavDrawerItem(Codes.SHARE_SCREEN, getString(R.string.share), 0));
+
         return items;
     }
 

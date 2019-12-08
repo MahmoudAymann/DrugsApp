@@ -2,6 +2,7 @@ package maymanm.drugsapp.viewmodel.activity;
 
 import maymanm.drugsapp.base.BaseViewModel;
 import maymanm.drugsapp.base.constantsutils.Codes;
+import maymanm.drugsapp.base.constantsutils.JsonStrings;
 import maymanm.drugsapp.base.constantsutils.Params;
 import maymanm.drugsapp.model.drugs.DrugsResponse;
 import maymanm.drugsapp.util.ApplicationUtil;
@@ -12,11 +13,11 @@ import io.reactivex.disposables.Disposable;
 public class SplashScreenViewModel extends BaseViewModel {
 
     private Disposable disposable;
+    private JsonStrings jsonStrings = new JsonStrings();
 
     public SplashScreenViewModel() {
         startApp();
-        PreferenceHelperManager.saveDrugs(ApplicationUtil.ObjectFromStringJson(Params.DRUGS_JSON_STRING, DrugsResponse.class));
-
+        PreferenceHelperManager.saveDrugs(ApplicationUtil.ObjectFromStringJson(jsonStrings.getNormalDrugs(), DrugsResponse.class));
     }
 
     private void startApp() {

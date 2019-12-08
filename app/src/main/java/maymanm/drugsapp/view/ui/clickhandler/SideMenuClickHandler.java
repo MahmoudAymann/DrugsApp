@@ -1,5 +1,7 @@
 package maymanm.drugsapp.view.ui.clickhandler;
 
+import android.app.Application;
+
 import androidx.core.view.GravityCompat;
 import androidx.lifecycle.Observer;
 
@@ -42,6 +44,12 @@ public class SideMenuClickHandler implements Observer<NavDrawerItem> {
                 break;
             case Codes.CONTACT_US_SCREEN:
                 ApplicationUtil.openWebIntent(context, "https://docs.google.com/forms/d/e/1FAIpQLSfBy5xzQGNbg_dZ1vwaGI4CAk83bOIGj7Fo_0kaoDJXB4YALQ/viewform");
+                break;
+            case Codes.SHARE_SCREEN:
+                SettingsManager.shareApp(context);
+                break;
+            case Codes.RATE_SCREEN:
+                SettingsManager.rateApp(context);
                 break;
         }
     }

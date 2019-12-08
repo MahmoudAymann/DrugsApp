@@ -13,7 +13,6 @@ import java.util.List;
 import maymanm.drugsapp.application.BaseApplication;
 import maymanm.drugsapp.base.constantsutils.Params;
 import maymanm.drugsapp.model.drugs.DrugsResponse;
-import maymanm.drugsapp.model.login.response.AccountData;
 import timber.log.Timber;
 
 public class PreferenceHelperManager {
@@ -122,12 +121,12 @@ public class PreferenceHelperManager {
 
     public static void setCountryId(int token) {
             SharedPreferences.Editor editor = getSharedPreferenceInstance().edit();
-            editor.putInt(Params.PREF_COUNTRY, token);
+            editor.putInt(Params.PREF_CATEGORY, token);
             editor.apply();
     }
 
     public static int getCountryId() {
-        return getSharedPreferenceInstance().getInt(Params.PREF_COUNTRY, 0);
+        return getSharedPreferenceInstance().getInt(Params.PREF_CATEGORY, 0);
     }
 
     public static void setLangPos(int position) {
@@ -224,4 +223,14 @@ public class PreferenceHelperManager {
     }
 
 
+    public static int getDrugCategory() {
+        return getSharedPreferenceInstance().getInt(Params.PREF_CATEGORY, 0);
+    }
+
+
+    public static void setDrugCategory(int category) {
+        SharedPreferences.Editor editor = getSharedPreferenceInstance().edit();
+        editor.putInt(Params.PREF_CATEGORY, category);
+        editor.apply();
+    }
 }

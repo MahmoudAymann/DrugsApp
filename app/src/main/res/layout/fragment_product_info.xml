@@ -70,7 +70,7 @@
                     style="@style/ButtonFilled"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/alternative"
+                    android:text="@{viewModel.obsCategoryName}"
                     app:backgroundTint="#000E2B"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />

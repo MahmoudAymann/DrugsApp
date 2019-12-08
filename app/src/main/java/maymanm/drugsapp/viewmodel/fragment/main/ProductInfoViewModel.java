@@ -4,6 +4,7 @@ import android.preference.Preference;
 
 import androidx.databinding.ObservableField;
 
+import maymanm.drugsapp.R;
 import maymanm.drugsapp.application.OnClick;
 import maymanm.drugsapp.base.BaseViewModel;
 import maymanm.drugsapp.base.constantsutils.Codes;
@@ -32,5 +33,10 @@ public class ProductInfoViewModel extends BaseViewModel {
             }
         }
         notifyChange();
+
+        if (item.getCategory() == 1)
+            obsCategoryName.set(getString(R.string.brand));
+        else
+            obsCategoryName.set(getString(R.string.genrics));
     }
 }

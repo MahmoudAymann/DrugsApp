@@ -159,6 +159,31 @@
                 </com.google.android.material.textfield.TextInputLayout>
 
 
+                <CheckBox
+                    android:id="@+id/checkbox_medical"
+                    android:layout_width="@dimen/dp100w"
+                    android:layout_height="wrap_content"
+                    android:text="medical"
+                    android:layout_marginTop="@dimen/dp16h"
+                    android:checked="@{viewModel.obsIsMedical == 1}"
+                    android:onClick="@{()->viewModel.onCheckClick(1)}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/til_phone" />
+
+
+                <CheckBox
+                    android:id="@+id/checkbox_non_medical"
+                    android:layout_width="@dimen/dp100w"
+                    android:layout_height="wrap_content"
+                    android:text="non medical"
+                    android:checked="@{viewModel.obsIsMedical == 2}"
+                    android:onClick="@{()->viewModel.onCheckClick(2)}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/checkbox_medical" />
+
+
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/btn_register"
                     android:layout_width="match_parent"
@@ -171,7 +196,7 @@
                     android:layout_marginTop="@dimen/dp32h"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/til_phone" />
+                    app:layout_constraintTop_toBottomOf="@id/checkbox_non_medical" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 

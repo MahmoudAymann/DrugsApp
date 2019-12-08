@@ -1,5 +1,6 @@
 package maymanm.drugsapp.viewmodel.fragment.main;
 
+import maymanm.drugsapp.R;
 import maymanm.drugsapp.application.OnClick;
 import maymanm.drugsapp.base.BaseViewModel;
 import maymanm.drugsapp.base.constantsutils.Codes;
@@ -26,13 +27,17 @@ public class ProductDetailViewModel extends BaseViewModel {
     }
 
     private void getData(int pos) {
-        for (int i=0;i<drugsResponse.getData().getDrugs().size();i++){
-            if (pos == drugsResponse.getData().getDrugs().get(i).getId()){
+        for (int i = 0; i < drugsResponse.getData().getDrugs().size(); i++) {
+            if (pos == drugsResponse.getData().getDrugs().get(i).getId()) {
                 item = drugsResponse.getData().getDrugs().get(i);
                 break;
             }
         }
         notifyChange();
+        if (item.getCategory() == 1)
+            obsCategoryName.set(getString(R.string.brand));
+        else
+            obsCategoryName.set(getString(R.string.genrics));
         try {
             tabletsAdapter.updateDataList(drugsResponse.getData().getDrugs().get(pos).getTablets());
         } catch (Exception e) {
@@ -65,6 +70,8 @@ public class ProductDetailViewModel extends BaseViewModel {
             case 7:
                 setValue(Codes.SIDE_EFFECTS);
                 break;
+            case 8:
+                setValue(Codes.DOSE);
         }
     }
 }

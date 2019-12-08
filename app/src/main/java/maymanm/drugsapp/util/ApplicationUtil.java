@@ -261,7 +261,7 @@ public abstract class ApplicationUtil {
         return BaseApplication.getInstance().getResources().getColor(colorRes);
     }
 
-    public static void openWebIntent(MainActivity context, String url) {
+    public static void openWebIntent(Activity context, String url) {
         context.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(url)));
     }
 

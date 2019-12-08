@@ -116,6 +116,11 @@ public class ProductDetailsFragment extends BaseFragment implements Observer<Obj
                 bundle.putString(Params.DESCRIPTION, viewModel.item.getSideEffects());
                 bundle.putInt(Params.PRODUCT_ID, drugId);
                 MovementManager.startDetailsActivity(getContext(), Codes.PRODUCT_INFO, bundle);
+            }else if (result == Codes.DOSE){
+                Bundle bundle = new Bundle();
+                bundle.putString(Params.DESCRIPTION, viewModel.item.getDose());
+                bundle.putInt(Params.PRODUCT_ID, drugId);
+                MovementManager.startDetailsActivity(getContext(), Codes.PRODUCT_INFO, bundle);
             }
         }
     }

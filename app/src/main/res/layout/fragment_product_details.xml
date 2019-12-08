@@ -70,7 +70,7 @@
                     style="@style/ButtonFilled"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/alternative"
+                    android:text="@{viewModel.obsCategoryName}"
                     app:backgroundTint="#000E2B"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -154,6 +154,20 @@
                 app:layout_constraintTop_toBottomOf="@id/cv_tablets"/>
 
             <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_dose"
+                style="@style/SubmitButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/dose"
+                android:onClick="@{()->viewModel.clickButton(8)}"
+                android:layout_marginTop="@dimen/dp16h"
+                android:layout_marginEnd="@dimen/dp40w"
+                android:layout_marginStart="@dimen/dp40w"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/btn_composition"/>
+
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btn_indication"
                 style="@style/SubmitButton"
                 android:layout_width="0dp"
@@ -165,7 +179,7 @@
                 android:layout_marginStart="@dimen/dp40w"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/btn_composition"/>
+                app:layout_constraintTop_toBottomOf="@id/btn_dose"/>
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btn_contra"
@@ -236,7 +250,6 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/btn_interactions"/>
-
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

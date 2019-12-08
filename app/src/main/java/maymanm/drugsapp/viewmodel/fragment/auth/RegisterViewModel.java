@@ -3,6 +3,7 @@ package maymanm.drugsapp.viewmodel.fragment.auth;
 import android.view.View;
 
 import androidx.databinding.ObservableBoolean;
+import androidx.databinding.ObservableInt;
 
 import com.android.volley.Request;
 
@@ -20,9 +21,13 @@ import maymanm.drugsapp.util.ErrorsUtil;
 import maymanm.drugsapp.util.PreferenceHelperManager;
 
 public class RegisterViewModel extends BaseViewModel {
-
+    public ObservableInt obsIsMedical = new ObservableInt(-1);
     public RegisterViewModel() {
 
+    }
+
+    public void onCheckClick(int isMedical){
+        obsIsMedical.set(isMedical);
     }
 
     @OnClick

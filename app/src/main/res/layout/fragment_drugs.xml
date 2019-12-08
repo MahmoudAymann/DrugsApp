@@ -64,8 +64,6 @@
                 android:hint="@string/search_engine"
                 android:text="@={viewModel.obsText}"
                 android:inputType="text" />
-
-
         </com.google.android.material.textfield.TextInputLayout>
 
 
