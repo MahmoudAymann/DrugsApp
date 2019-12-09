@@ -25,7 +25,8 @@
         tools:ignore="AllowBackup,GoogleAppIndexingWarning,UnusedAttribute">
 
         <activity android:name=".view.ui.activity.AuthActivity" />
-        <activity android:name=".view.ui.activity.MainActivity" />
+        <activity android:name=".view.ui.activity.MainActivity"
+            android:windowSoftInputMode="adjustPan"/>
 
         <activity
             android:name=".view.ui.activity.SplashActivity">

@@ -53,6 +53,7 @@ public class SearchFragment extends BaseFragment implements Observer<Object> {
         viewModel = new SearchViewModel(text);
         binding.setViewModel(viewModel);
         viewModel.getMutableLiveData().observe(getViewLifecycleOwner(), this);
+
         viewModel.drugsAdapter.getMutableLiveData().observe(getViewLifecycleOwner(), item->{
             Bundle bundle = new Bundle();
             bundle.putInt(Params.PRODUCT_ID, item.getId());

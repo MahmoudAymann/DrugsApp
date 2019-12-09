@@ -120,10 +120,10 @@ public class ChatAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     private int counter = 1;
 
-    public void addItem(String message) {
+    public void addItem(String message, int i) {
         ChatItem chatItem = new ChatItem();
         chatItem.setMessage(message);
-        chatItem.setType(1);
+        chatItem.setType(i);
         chatItem.setId(counter++);
         if (mDataList == null) {
             mDataList = new ArrayList<>();

@@ -4,6 +4,7 @@ import android.view.View;
 
 import com.android.volley.Request;
 
+import io.reactivex.functions.Action;
 import maymanm.drugsapp.application.OnClick;
 import maymanm.drugsapp.base.BaseViewModel;
 import maymanm.drugsapp.base.constantsutils.Codes;
@@ -14,6 +15,7 @@ import maymanm.drugsapp.model.login.request.LoginRequest;
 import maymanm.drugsapp.model.login.response.LoginResponse;
 import maymanm.drugsapp.util.ApplicationUtil;
 import maymanm.drugsapp.util.PreferenceHelperManager;
+import maymanm.drugsapp.util.RxUtils;
 
 public class LoginViewModel extends BaseViewModel {
 
@@ -28,7 +30,13 @@ public class LoginViewModel extends BaseViewModel {
     }
     @OnClick
     public void onLoginClick() {
-        setValue(Codes.HOME_SCREEN);
+        accessLoadingBar(View.VISIBLE);
+
+        RxUtils.delay(2, () -> {
+            setMessage("your information has been approved");
+            setValue(Codes.SHOW_MESSAGE);
+            setValue(Codes.HOME_SCREEN);
+        });
     }
 
 

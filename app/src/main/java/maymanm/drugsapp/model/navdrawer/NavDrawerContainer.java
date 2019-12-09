@@ -35,17 +35,11 @@ public class NavDrawerContainer {
     public ArrayList<NavDrawerItem> getDrawerItemsData() {
         ArrayList<NavDrawerItem> items = new ArrayList<>();
         items.add(new NavDrawerItem(Codes.FAVOURITE_SCREEN, getString(R.string.saved_drugs), 0));
-
-        items.add(new NavDrawerItem(Codes.CONTACT_US_SCREEN, getString(R.string.contact_us), 0));
-
+        items.add(new NavDrawerItem(Codes.CONTACT_US_SCREEN, getString(R.string.rate), 0));
         items.add(new NavDrawerItem(Codes.ADD_NEW_DRUG, getString(R.string.add_new_drug), 0));
-
         items.add(new NavDrawerItem(Codes.DOWNLOAD_UPDATES, getString(R.string.download_updates), 0));
-
         items.add(new NavDrawerItem(Codes.SETTINGS_SCREEN, getString(R.string.settings), 0));
-
-        items.add(new NavDrawerItem(Codes.RATE_SCREEN, getString(R.string.rate), 0));
-
+//        items.add(new NavDrawerItem(Codes.RATE_SCREEN, getString(R.string.rate), 0));
         items.add(new NavDrawerItem(Codes.SHARE_SCREEN, getString(R.string.share), 0));
 
         return items;

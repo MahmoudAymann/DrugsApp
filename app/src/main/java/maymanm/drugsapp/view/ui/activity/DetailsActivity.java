@@ -1,6 +1,7 @@
 package maymanm.drugsapp.view.ui.activity;
 
 import android.os.Bundle;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import androidx.appcompat.widget.Toolbar;
@@ -71,7 +72,7 @@ public class DetailsActivity extends ParentActivity implements Observer<Object> 
     }
 
     public void setFavourite(boolean fav){
-//        viewModel.obsIsFav.set(fav);
+        viewModel.obsIsFav.set(fav);
 //        viewModel.notifyChange();
     }
 
@@ -96,5 +97,9 @@ public class DetailsActivity extends ParentActivity implements Observer<Object> 
         if (result == Codes.PRESS_BACK) {
             onBackPressed();
         }
+    }
+
+    public ProgressBar getProgressBar() {
+        return binding.appBarDetails.contentDetails.pbDetails;
     }
 }

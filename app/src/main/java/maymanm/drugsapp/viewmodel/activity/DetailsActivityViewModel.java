@@ -31,22 +31,22 @@ public class DetailsActivityViewModel extends BaseViewModel {
     public void onFavClick() {
         if (obsIsFav.get()) {
             //remove
-            for (int i = 0; i < PreferenceHelperManager.getIds().size(); i++) {
-                if (PreferenceHelperManager.getDrugId().equals(PreferenceHelperManager.getIds().get(i))) {
-                    PreferenceHelperManager.getIds().remove(i);
+            for (int id : PreferenceHelperManager.getIds()) {
+                if (PreferenceHelperManager.getDrugId() == id) {
+                    PreferenceHelperManager.getIds().remove(Integer.valueOf(id));
                     PreferenceHelperManager.saveIds(PreferenceHelperManager.getIds());
                     break;
                 }
             }
+            Timber.e("" + PreferenceHelperManager.getIds());
             obsIsFav.set(false);
         } else {
             //add
-            List<String> stringList = PreferenceHelperManager.getIds();
+            List<Integer> stringList = PreferenceHelperManager.getIds();
             stringList.add(PreferenceHelperManager.getDrugId());
-            Timber.e(PreferenceHelperManager.getIds()+"");
+            PreferenceHelperManager.saveIds(stringList);
+            Timber.e(PreferenceHelperManager.getIds() + "");
             obsIsFav.set(true);
         }
     }
-
-
 }

@@ -2,6 +2,7 @@ package maymanm.drugsapp.view.ui.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -11,6 +12,8 @@ import androidx.databinding.DataBindingUtil;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
+
+import com.forms.sti.progresslitieigb.Model.Setting;
 import com.google.android.material.tabs.TabLayoutMediator;
 import java.util.Objects;
 import maymanm.drugsapp.R;
@@ -21,6 +24,7 @@ import maymanm.drugsapp.databinding.ActivityMainBinding;
 import maymanm.drugsapp.util.LocalHelper;
 import maymanm.drugsapp.util.MyAnimation;
 import maymanm.drugsapp.util.RxUtils;
+import maymanm.drugsapp.util.SettingsManager;
 import maymanm.drugsapp.view.adapter.parent.MainFragmentPagerAdapter;
 import maymanm.drugsapp.view.ui.clickhandler.SideMenuClickHandler;
 import maymanm.drugsapp.view.ui.fragment.main.DisabledFragment;
@@ -163,7 +167,9 @@ public class MainActivity extends ParentActivity implements Observer<Object> {
     public void onChanged(Object obj) {
         int result = (Integer) obj;
         switch (result) {
-
+            case Codes.ON_GRAND_CLICK:
+                SettingsManager.openFacebook(this, "https://www.facebook.com/Drugs-Home-109294930559087");
+                break;
         }
     }
 }

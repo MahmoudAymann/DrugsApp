@@ -20,15 +20,15 @@ public class ProductDetailViewModel extends BaseViewModel {
     public DrugsItem item;
     private DrugsResponse drugsResponse;
 
-    public ProductDetailViewModel(int pos) {
+    public ProductDetailViewModel(int id) {
         drugsResponse = PreferenceHelperManager.getDrugsResponse();
         Timber.e(drugsResponse.toString());
-        getData(pos);
+        getData(id);
     }
 
-    private void getData(int pos) {
+    private void getData(int id) {
         for (int i = 0; i < drugsResponse.getData().getDrugs().size(); i++) {
-            if (pos == drugsResponse.getData().getDrugs().get(i).getId()) {
+            if (id == drugsResponse.getData().getDrugs().get(i).getId()) {
                 item = drugsResponse.getData().getDrugs().get(i);
                 break;
             }
@@ -36,10 +36,14 @@ public class ProductDetailViewModel extends BaseViewModel {
         notifyChange();
         if (item.getCategory() == 1)
             obsCategoryName.set(getString(R.string.brand));
-        else
-            obsCategoryName.set(getString(R.string.genrics));
+        else {
+            if (id == 24 || id == 25)
+                obsCategoryName.set(getString(R.string.diabets));
+            else
+                obsCategoryName.set(getString(R.string.virus_c));
+        }
         try {
-            tabletsAdapter.updateDataList(drugsResponse.getData().getDrugs().get(pos).getTablets());
+            tabletsAdapter.updateDataList(item.getTablets());
         } catch (Exception e) {
             Timber.e(e);
         }

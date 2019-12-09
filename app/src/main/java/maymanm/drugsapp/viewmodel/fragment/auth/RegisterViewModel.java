@@ -19,6 +19,7 @@ import maymanm.drugsapp.model.register.RegisterRequest;
 import maymanm.drugsapp.model.register.RegisterResponse;
 import maymanm.drugsapp.util.ErrorsUtil;
 import maymanm.drugsapp.util.PreferenceHelperManager;
+import maymanm.drugsapp.util.RxUtils;
 
 public class RegisterViewModel extends BaseViewModel {
     public ObservableInt obsIsMedical = new ObservableInt(-1);
@@ -32,7 +33,12 @@ public class RegisterViewModel extends BaseViewModel {
 
     @OnClick
     public void onSignUpClick() {
-        setValue(Codes.HOME_SCREEN);
+        accessLoadingBar(View.VISIBLE);
+        RxUtils.delay(2, () -> {
+            setMessage("your information has been added");
+            setValue(Codes.SHOW_MESSAGE);
+            setValue(Codes.HOME_SCREEN);
+        });
     }
 
     public void onBackClick() {

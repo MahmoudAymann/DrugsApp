@@ -191,16 +191,16 @@ public class PreferenceHelperManager {
 
     public static void setDrugId(int code) {
         SharedPreferences.Editor editor = getSharedPreferenceInstance().edit();
-        editor.putString(Params.PREF_CODE, String.valueOf(code));
+        editor.putInt(Params.PREF_CODE, code);
         editor.apply();
     }
 
-    public static String getDrugId() {
-        return getSharedPreferenceInstance().getString(Params.PREF_CODE, "0");
+    public static int getDrugId() {
+        return getSharedPreferenceInstance().getInt(Params.PREF_CODE, 0);
     }
 
 
-    public static void saveIds(List<String> items) {
+    public static void saveIds(List<Integer> items) {
         SharedPreferences.Editor prefsEditor = getSharedPreferenceInstance().edit();
         Gson gson = new Gson();
         String json = gson.toJson(items);
@@ -208,12 +208,12 @@ public class PreferenceHelperManager {
         prefsEditor.apply();
     }
 
-    public static List<String> getIds() {
+    public static List<Integer> getIds() {
         Gson gson = new Gson();
-        List<String> companyList;
+        List<Integer> companyList;
         String string = getSharedPreferenceInstance().getString(Params.PREF_CART_ITEMS, "n/a");
         if(!string.equals("n/a")) {
-            Type type = new TypeToken<List<String>>() {
+            Type type = new TypeToken<List<Integer>>() {
             }.getType();
             companyList = gson.fromJson(string, type);
         }else {

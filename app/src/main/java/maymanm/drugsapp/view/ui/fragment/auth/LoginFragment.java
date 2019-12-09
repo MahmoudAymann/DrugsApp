@@ -62,8 +62,6 @@ public class LoginFragment extends BaseFragment implements Observer<Object> {
         }else if(result == Codes.HOME_SCREEN){
             MovementManager.startActivityFragment(getContext(), MainActivity.class, result);
             requireActivity().finishAffinity();
-        }else if (result == Codes.FORGOT_PASSWORD_SCREEN){
-            MovementManager.startActivityFragment(getContext(), AuthActivity.class, result);
         }else if (result == Codes.REGISTER_SCREEN){
             MovementManager.startActivityFragment(getContext(), AuthActivity.class, Codes.REGISTER_SCREEN);
         }else if (result == Codes.PRESS_BACK){

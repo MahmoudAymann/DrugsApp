@@ -20,6 +20,7 @@ import maymanm.drugsapp.base.constantsutils.Codes;
 import maymanm.drugsapp.base.constantsutils.Params;
 import maymanm.drugsapp.base.view.BaseFragment;
 import maymanm.drugsapp.databinding.FragmentProductDetailsBinding;
+import maymanm.drugsapp.model.drugs.DrugsItem;
 import maymanm.drugsapp.util.ArgsUtil;
 import maymanm.drugsapp.util.PreferenceHelperManager;
 import maymanm.drugsapp.viewmodel.fragment.main.ProductDetailViewModel;
@@ -56,12 +57,9 @@ public class ProductDetailsFragment extends BaseFragment implements Observer<Obj
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        Timber.e(PreferenceHelperManager.getDrugId());
-        Timber.e(PreferenceHelperManager.getIds()+"");
-        for (int i = 0; i < PreferenceHelperManager.getIds().size(); i++) {
-            if (PreferenceHelperManager.getIds().get(i).equals(PreferenceHelperManager.getDrugId())) {
+        for (int id : PreferenceHelperManager.getIds()) {
+            if (id == drugId) {
                 setFav(true);
-                Timber.e("ssssss");
                 break;
             }
         }

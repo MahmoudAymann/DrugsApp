@@ -1,6 +1,7 @@
 package maymanm.drugsapp.view.ui.fragment.main;
 
 
+import android.app.Application;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,6 +18,7 @@ import maymanm.drugsapp.R;
 import maymanm.drugsapp.base.constantsutils.Codes;
 import maymanm.drugsapp.base.view.BaseFragment;
 import maymanm.drugsapp.databinding.FragmentDisabledBinding;
+import maymanm.drugsapp.util.ApplicationUtil;
 import maymanm.drugsapp.viewmodel.fragment.main.DisabledViewModel;
 import maymanm.drugsapp.viewmodel.fragment.main.DrugsViewModel;
 
@@ -57,6 +59,8 @@ public class DisabledFragment extends BaseFragment implements Observer<Object> {
                 showProgressAnimation(result);
             } else if (result == Codes.SHOW_MESSAGE) {
                 showMessage(viewModel.getMessage());
+            }else if (result == Codes.PRESS_BACK){
+                ApplicationUtil.hideKeyboard(requireActivity());
             }
         }
     }

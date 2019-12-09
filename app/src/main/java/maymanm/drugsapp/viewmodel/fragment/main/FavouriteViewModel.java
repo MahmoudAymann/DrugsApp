@@ -2,11 +2,12 @@ package maymanm.drugsapp.viewmodel.fragment.main;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import maymanm.drugsapp.base.BaseViewModel;
 import maymanm.drugsapp.model.drugs.DrugsItem;
-import maymanm.drugsapp.model.favourite.FavouriteItem;
 import maymanm.drugsapp.util.PreferenceHelperManager;
 import maymanm.drugsapp.view.adapter.parent.FavouriteAdapter;
+import timber.log.Timber;
 
 /**
  * Created by MahmoudAyman on 12/7/2019.
@@ -15,25 +16,17 @@ public class FavouriteViewModel extends BaseViewModel {
 
     public FavouriteAdapter favouriteAdapter = new FavouriteAdapter();
 
-    private List<FavouriteItem> mDataList = new ArrayList<>();
-    private List<DrugsItem> prefList;
-    private int counter = 1;
-
     public FavouriteViewModel() {
-        prefList = PreferenceHelperManager.getDrugsResponse().getData().getDrugs();
-        for (int i = 0; i < prefList.size(); i++) {
-            for (int k = 0; k < PreferenceHelperManager.getIds().size(); k++) {
-                if (PreferenceHelperManager.getIds().get(k).equals(String.valueOf(prefList.get(i).getId()))) {
-                    FavouriteItem favouriteItem = new FavouriteItem();
-                    favouriteItem.setId(counter);
-                    counter ++;
-                    favouriteItem.setName(prefList.get(i).getName());
-                    favouriteItem.setDrugId(prefList.get(i).getId());
-                    mDataList.add(favouriteItem);
+        List<DrugsItem> prefList = PreferenceHelperManager.getDrugsResponse().getData().getDrugs();
+        List<DrugsItem> mDataList = new ArrayList<>();
+        for (DrugsItem item : prefList) {
+            for (int id : PreferenceHelperManager.getIds()) {
+                if (item.getId() == id) {
+                    mDataList.add(item);
                 }
             }
         }//end for
-
+        Timber.e(mDataList.size() + "");
         favouriteAdapter.updateDataList(mDataList);
     }
 

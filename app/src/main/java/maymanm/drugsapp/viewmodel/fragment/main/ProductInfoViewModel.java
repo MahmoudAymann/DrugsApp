@@ -26,17 +26,20 @@ public class ProductInfoViewModel extends BaseViewModel {
     }
 
     private void getData(int id) {
-        for (int i= 0 ; i< PreferenceHelperManager.getDrugsResponse().getData().getDrugs().size(); i++){
-            if (id == PreferenceHelperManager.getDrugsResponse().getData().getDrugs().get(i).getId()){
-                item = PreferenceHelperManager.getDrugsResponse().getData().getDrugs().get(i);
+        for (DrugsItem drugsItem : PreferenceHelperManager.getDrugsResponse().getData().getDrugs()){
+            if (id == drugsItem.getId()){
+                item = drugsItem;
                 break;
             }
         }
         notifyChange();
-
         if (item.getCategory() == 1)
             obsCategoryName.set(getString(R.string.brand));
-        else
-            obsCategoryName.set(getString(R.string.genrics));
+        else {
+            if (id == 24 || id == 25)
+                obsCategoryName.set(getString(R.string.diabets));
+            else
+                obsCategoryName.set(getString(R.string.virus_c));
+        }
     }
 }

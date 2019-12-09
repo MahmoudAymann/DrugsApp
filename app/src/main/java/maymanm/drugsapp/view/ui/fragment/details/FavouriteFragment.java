@@ -60,8 +60,8 @@ public class FavouriteFragment extends BaseFragment implements Observer<Object> 
         viewModel.getMutableLiveData().observe(getViewLifecycleOwner(), this);
         viewModel.favouriteAdapter.getMutableLiveData().observe(getViewLifecycleOwner(), item->{
             Bundle bundle = new Bundle();
-            bundle.putInt(Params.PRODUCT_ID, item.getDrugId());
-            PreferenceHelperManager.setDrugId(item.getDrugId());
+            bundle.putInt(Params.PRODUCT_ID, item.getId());
+            PreferenceHelperManager.setDrugId(item.getId());
             MovementManager.startDetailsActivity(getContext(), Codes.PRODUCT_DETAILS, bundle);
         });
     }

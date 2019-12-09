@@ -17,20 +17,20 @@ import java.util.Objects;
 
 import maymanm.drugsapp.R;
 import maymanm.drugsapp.databinding.ItemFavouriteViewBinding;
-import maymanm.drugsapp.model.favourite.FavouriteItem;
+import maymanm.drugsapp.model.drugs.DrugsItem;
 import maymanm.drugsapp.view.adapter.itemviewmodel.ItemFavouriteViewModel;
 import maymanm.drugsapp.view.adapter.viewholder.FavouriteViewHolder;
 
 public class FavouriteAdapter extends RecyclerView.Adapter<FavouriteViewHolder> implements Filterable {
-    private List<? extends FavouriteItem> mDataList;
-    private MutableLiveData<FavouriteItem> mutableLiveData;
+    private List<? extends DrugsItem> mDataList;
+    private MutableLiveData<DrugsItem> mutableLiveData;
     private static final int layoutRes = R.layout.item_favourite_view;
 
     public FavouriteAdapter() {
         mutableLiveData = new MutableLiveData<>();
     }
 
-    public void updateDataList(final List<? extends FavouriteItem> newList) {
+        public void updateDataList(final List<? extends DrugsItem> newList) {
         if (mDataList == null) {
             mDataList = newList;
             notifyItemRangeInserted(0, newList.size());
@@ -48,18 +48,18 @@ public class FavouriteAdapter extends RecyclerView.Adapter<FavouriteViewHolder> 
 
                 @Override
                 public boolean areItemsTheSame(int oldItemPosition, int newItemPosition) {
-                    FavouriteItem old = mDataList.get(oldItemPosition);
-                    FavouriteItem newItem = newList.get(newItemPosition);
+                    DrugsItem old = mDataList.get(oldItemPosition);
+                    DrugsItem newItem = newList.get(newItemPosition);
                     return old.getId() == newItem.getId();
                 }
 
                 @Override
                 public boolean areContentsTheSame(int oldItemPosition, int newItemPosition) {
-                    FavouriteItem old = mDataList.get(oldItemPosition);
-                    FavouriteItem newItem = newList.get(newItemPosition);
+                    DrugsItem old = mDataList.get(oldItemPosition);
+                    DrugsItem newItem = newList.get(newItemPosition);
                     return old.getId() == newItem.getId()
                             && Objects.equals(old.getName(), newItem.getName())
-                            &&old.getDrugId() == newItem.getDrugId();
+                            &&old.getCategory() == newItem.getCategory();
                 }
             });
             mDataList = newList;
@@ -86,7 +86,7 @@ public class FavouriteAdapter extends RecyclerView.Adapter<FavouriteViewHolder> 
         });
     }
 
-    private FavouriteItem getCurrentItem(int pos) {
+    private DrugsItem getCurrentItem(int pos) {
         return mDataList.get(pos);
     }
 
@@ -109,7 +109,7 @@ public class FavouriteAdapter extends RecyclerView.Adapter<FavouriteViewHolder> 
         holder.unbind();
     }
 
-    public MutableLiveData<FavouriteItem> getMutableLiveData() {
+    public MutableLiveData<DrugsItem> getMutableLiveData() {
         return mutableLiveData;
     }
 

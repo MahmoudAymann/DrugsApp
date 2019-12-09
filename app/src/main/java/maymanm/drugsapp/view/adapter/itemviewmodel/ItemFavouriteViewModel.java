@@ -1,15 +1,15 @@
 package maymanm.drugsapp.view.adapter.itemviewmodel;
 
 import maymanm.drugsapp.base.BaseViewModel;
-import maymanm.drugsapp.model.favourite.FavouriteItem;
+import maymanm.drugsapp.model.drugs.DrugsItem;
 
 /**
  * Created by MahmoudAyman on 12/7/2019.
  **/
 public class ItemFavouriteViewModel extends BaseViewModel {
-    public FavouriteItem item;
+    public DrugsItem item;
 
-    public ItemFavouriteViewModel(FavouriteItem item) {
+    public ItemFavouriteViewModel(DrugsItem item) {
         this.item = item;
     }
 

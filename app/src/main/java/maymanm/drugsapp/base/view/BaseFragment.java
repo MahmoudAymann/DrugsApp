@@ -44,13 +44,13 @@ public class BaseFragment extends Fragment {
             } catch (ClassCastException e) {
                 e.getStackTrace();
             }
-        } else if (mContext instanceof MainActivity) {
-//            try {
-//                progressBar = ((MainActivity) mContext).getProgressBar();
-//                progressBar.setVisibility(show);
-//            } catch (ClassCastException e) {
-//                e.getStackTrace();
-//            }
+        } else if (mContext instanceof DetailsActivity) {
+            try {
+                progressBar = ((DetailsActivity) mContext).getProgressBar();
+                progressBar.setVisibility(show);
+            } catch (ClassCastException e) {
+                e.getStackTrace();
+            }
         }
     }
 
@@ -60,39 +60,23 @@ public class BaseFragment extends Fragment {
         }
     }
 
-    private void showAnimation(int resRaw, int show) {
-        LottieAnimationView animationView;
-//        if (mContext instanceof MainActivity) {
-//            animationView = ((MainActivity) mContext).getAnimationView();
-//        } else {
-        animationView = ((AuthActivity) mContext).getAnimationView();
-//        }
-        animationView.setAnimation(resRaw);
-        animationView.setVisibility(show);
-        if (show == View.VISIBLE)
-            animationView.playAnimation();
-        else
-            animationView.cancelAnimation();
-    }
-
     protected void showProgressAnimation(int show) {
-        LottieAnimationView animationView;
-        if (mContext instanceof DetailsActivity) {
-            animationView = ((DetailsActivity) mContext).getAnimationView();
-        } else if (mContext instanceof AuthActivity) {
-            animationView = ((AuthActivity) mContext).getAnimationView();
-        } else if (mContext instanceof DialogActivity) {
-            animationView = ((DialogActivity) mContext).getAnimationView();
-        } else {
-            Timber.e("ACTIVITY INSTANCE NOT FOUND");
-            return;
+        ProgressBar progressBar;
+        if (mContext instanceof AuthActivity) {
+            try {
+                progressBar = ((AuthActivity) mContext).getProgressBar();
+                progressBar.setVisibility(show);
+            } catch (ClassCastException e) {
+                e.getStackTrace();
+            }
+        } else if (mContext instanceof DetailsActivity) {
+            try {
+                progressBar = ((DetailsActivity) mContext).getProgressBar();
+                progressBar.setVisibility(show);
+            } catch (ClassCastException e) {
+                e.getStackTrace();
+            }
         }
-        animationView.setAnimation(R.raw.load_anim);
-        animationView.setVisibility(show);
-        if (show == View.VISIBLE)
-            animationView.playAnimation();
-        else
-            animationView.cancelAnimation();
     }
 
     public void showMessage(Object message) {

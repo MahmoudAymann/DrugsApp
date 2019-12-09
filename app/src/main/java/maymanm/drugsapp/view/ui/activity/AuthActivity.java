@@ -25,7 +25,6 @@ import timber.log.Timber;
 
 public class AuthActivity extends ParentActivity {
     public ActivityAuthBinding binding;
-    public ProgressBar progressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,7 +54,7 @@ public class AuthActivity extends ParentActivity {
     }
 
     public ProgressBar getProgressBar() {
-        return progressBar;
+        return binding.pbBaseLoadingBar;
     }
 
     public LottieAnimationView getAnimationView() {
