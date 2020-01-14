@@ -38,14 +38,12 @@ public class DetailsActivityViewModel extends BaseViewModel {
                     break;
                 }
             }
-            Timber.e("" + PreferenceHelperManager.getIds());
             obsIsFav.set(false);
         } else {
             //add
             List<Integer> stringList = PreferenceHelperManager.getIds();
             stringList.add(PreferenceHelperManager.getDrugId());
             PreferenceHelperManager.saveIds(stringList);
-            Timber.e(PreferenceHelperManager.getIds() + "");
             obsIsFav.set(true);
         }
     }
